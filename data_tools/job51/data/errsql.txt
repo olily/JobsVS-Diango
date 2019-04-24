@@ -1,0 +1,3 @@
+2019-04-24 14:44:23
+insert into job_url_info values( 112892449, "chengdu","https://m.51job.com/jobs/chengdu/112892449.html");
+insert into job_url_info values( 94063223, "chengdu","https://m.51job.com/jobs/chengdu-gxq/94063223.html");

@@ -1,0 +1,584 @@
+1552290371189	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.HQz8374pso23"
+1552290372730	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552290372730	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552290376078	Marionette	INFO	Listening on port 1763
+1552290376193	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+[Parent 11032, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 11032, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 16616, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 16616, Chrome_ChildThread] WARNING: pipe err[Parent 11032, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552299371052	Marionette	INFO	Stopped listening on port 1763
+[GPU 2
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.S20ACCIRuOSI"
+1552291491937	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552291491937	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552291494239	Marionette	INFO	Listening on port 3622
+1552291494643	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 12156, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552291701790	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.HzuJIlZILdF7"
+1552291703110	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552291703110	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552291705831	Marionette	INFO	Listening on port 3968
+1552291706145	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 6868, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5152, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5152, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+[Parent 5188, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 14476, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 14476, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/sr[Child 12480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 12480, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build1552299370707	Marionette	INFO	Stopped listening on port 4624
+[GPU 2594
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1552635541025	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.kZiyVBbXD4BA"
+1552635542504	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552635542504	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552635544900	Marionette	INFO	Listening on port 14220
+1552635545163	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0AF61C800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B211E000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3752000)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0AF61F800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3724000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B09EE5C000)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B5C33800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B37CD000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3754000)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0BEEE3800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0AF619800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B5C48800)::ForceLoseContext
+WebGL(000001B0B5D80800)::ForceLoseContext
+WebGL(000001B0B2125800)::ForceLoseContext
+WebGL(000001B0AF61D800)::ForceLoseContext
+WebGL(000001B0B3713800)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0ACB63000)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B2119000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B374C800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0AF60E800)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B5C43000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0BFB4C000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3797000)::ForceLoseContext
+[Parent 16712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3751000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B5D84800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001B0B3798000)::ForceLoseContext
+1552635694998	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.SbRZEYXQPSQx"
+1552635696196	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552635696197	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552635698674	Marionette	INFO	Listening on port 14932
+1552635699117	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000002323B18E800)::ForceLoseContext
+WebGL(0000023248549000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(00000232393B6000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002323DCF2800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002323F32B000)::ForceLoseContext
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000002323F35D800)::ForceLoseContext
+WebGL(000002323DCF8000)::ForceLoseContext
+WebGL(00000232460EB800)::ForceLoseContext
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 3613 of the JSON data
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002323F30D800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000023241989000)::ForceLoseContext
+[Parent 5668, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002324609C800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002323DCEC000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000002323F30E000)::ForceLoseContext
+1552636268974	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.6j9AJPEtaDi3"
+1552636270072	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552636270072	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552636272529	Marionette	INFO	Listening on port 1876
+1552636272854	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(0000022E5E08B000)::ForceLoseContext
+WebGL(0000022E64A2F000)::ForceLoseContext
+WebGL(0000022E64A5F000)::ForceLoseContext
+WebGL(0000022E64A71800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A47800)::ForceLoseContext
+WebGL(0000022E6768A800)::ForceLoseContext
+WebGL(0000022E6AC15800)::ForceLoseContext
+WebGL(0000022E64A43800)::ForceLoseContext
+WebGL(0000022E64A55800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A60000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6C6D1800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E70E88800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E5EAA3800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64180800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E5E08A800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E60C55000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A3B800)::ForceLoseContext
+WebGL(0000022E5EAA7000)::ForceLoseContext
+WebGL(0000022E70A52800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6C6D3000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E60C4C000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E60C5A800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A38800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E5E086800)::ForceLoseContext
+WebGL(0000022E6AC1F000)::ForceLoseContext
+WebGL(0000022E70A64000)::ForceLoseContext
+WebGL(0000022E60C4F000)::ForceLoseContext
+WebGL(0000022E64A72000)::ForceLoseContext
+WebGL(0000022E6E6A0800)::ForceLoseContext
+WebGL(0000022E70C4B800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A42800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E5EA13800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64189000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64193800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6AC18800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6D558800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E5E08B800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A4A800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6419C800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64185000)::ForceLoseContext
+WebGL(0000022E6AC03800)::ForceLoseContext
+WebGL(0000022E6AC1D000)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64181800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A3A800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E60C58000)::ForceLoseContext
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E67686800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6E69A800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A2B000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E6D564800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E70C47800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64180800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E64A6F000)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E73233000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(0000022E50460800)::ForceLoseContext
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 12180, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552640816434	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.gg8ewwrXVrG8"
+1552640817732	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552640817732	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552640819982	Marionette	INFO	Listening on port 4164
+1552640820709	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 7274 of the JSON data
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 32 of the JSON data
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 5044 of the JSON data
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000002823FF10800)::ForceLoseContext
+WebGL(000002823D3ED800)::ForceLoseContext
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 7397 of the JSON data
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000002824048E000)::ForceLoseContext
+WebGL(0000028243605800)::ForceLoseContext
+WebGL(000002823D38D800)::ForceLoseContext
+WebGL(000002823D391800)::ForceLoseContext
+WebGL(000002822F671800)::ForceLoseContext
+WebGL(0000028234DD6000)::ForceLoseContext
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 5756 of the JSON data
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 8122 of the JSON data
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 16613 of the JSON data
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 13329 of the JSON data
+WebGL(000002823D39B800)::ForceLoseContext
+WebGL(000002823D3F8800)::ForceLoseContext
+WebGL(00000282300AA800)::ForceLoseContext
+WebGL(00000282322B3800)::ForceLoseContext
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000002823D38E000)::ForceLoseContext
+WebGL(0000028240486000)::ForceLoseContext
+WebGL(000002824192A800)::ForceLoseContext
+WebGL(000002824360E800)::ForceLoseContext
+1552641088154	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.AHKARkz3LLqb"
+1552641089408	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552641089408	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552641091818	Marionette	INFO	Listening on port 4782
+1552641092553	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 363 of the JSON data
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001826A307800)::ForceLoseContext
+WebGL(000001826CA9C000)::ForceLoseContext
+WebGL(0000018262795000)::ForceLoseContext
+WebGL(00000182665B6800)::ForceLoseContext
+WebGL(000001826A321800)::ForceLoseContext
+WebGL(000001826CA88800)::ForceLoseContext
+JavaScript error: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: SyntaxError: JSON.parse: unterminated string at line 1 column 4649 of the JSON data
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 1316, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+ file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 20276, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 17764, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 17764, Chrome_Chi[Child 12204, Chrome_ChildThread] WARNING: pipe error: 109: fil1552642009879	Marionette	INFO	Stopped listening on port 4164
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[1552643344866	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.PLSlMIleX5tk"
+1552643347484	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552643347484	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552643350081	Marionette	INFO	Listening on port 8113
+1552643351036	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C72CC6C800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73D5D3800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 1[6P live WaerbGL contexts fore ntthis principal, losing the least recently  3424, Gecko_IOThread] WARNING: pipe error:used o 109:n file ze.
+:/build/build/srWebGL(000001C740FBA000)::ForceLoseContext
+c/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C740FA7800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C746B85800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73B3B3800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73B3B2800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73A99B000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C746295000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73D5D9000)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001C74A2F2800)::ForceLoseContext
+WebGL(000001C74B2DF800)::ForceLoseContext
+WebGL(000001C746B9E800)::ForceLoseContext
+WebGL(000001C74A2F8800)::ForceLoseContext
+WebGL(000001C746294000)::ForceLoseContext
+WebGL(000001C74AF20800)::ForceLoseContext
+WebGL(000001C746B91000)::ForceLoseContext
+WebGL(000001C74AFCE800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+WebGL(000001C74AFD3000)::ForceLoseContext
+WebGL(000001C74C216800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73D5D6800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C740FAB000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C744997000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73D5CA000)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit, line 12: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C746291000)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C746655800)::ForceLoseContext
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73A99F800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001C746288000)::ForceLoseContext
+WebGL(000001C74A2EC000)::ForceLoseContext
+WebGL(000001C746656000)::ForceLoseContext
+WebGL(000001C74AF06000)::ForceLoseContext
+WebGL(000001C746286000)::ForceLoseContext
+WebGL(000001C74AFCD000)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+JavaScript warning: https://webapi.amap.com/maps?v=1.3&key=ca71f341bd8d847d79b958d2c40b4532&callback=gdMapInit line 21 > eval line 95 > eval, line 1: Error: WebGL warning: <SetDimensions>: Exceeded 16 live WebGL contexts for this principal, losing the least recently used one.
+WebGL(000001C73D5D8800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001C74B2F2000)::ForceLoseContext
+WebGL(000001C74F10B800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001C74B2F6000)::ForceLoseContext
+WebGL(000001C74C228800)::ForceLoseContext
+WebGL(000001C74F10C000)::ForceLoseContext
+WebGL(000001C74F15C000)::ForceLoseContext
+WebGL(000001C73D5E0800)::ForceLoseContext
+WebGL(000001C744994800)::ForceLoseContext
+WebGL(000001C746B84800)::ForceLoseContext
+WebGL(000001C74A2E2800)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+WebGL(000001C74628B000)::ForceLoseContext
+WebGL(000001C74AF0A000)::ForceLoseContext
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Parent 3424, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552644603362	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.IwVHvy9j6Tev"
+1552644604476	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552644604476	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552644606526	Marionette	INFO	Listening on port 9503
+1552644607193	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 20712, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552644645458	Marionette	INFO	Stopped listening on port 9503
+[Child 15108, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 1510[Child 19052, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 19052, Chrome_ChildThread] [GPU 137
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1552645078467	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.ybcyLQFfAPCm"
+1552645079627	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552645079627	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552645081950	Marionette	INFO	Listening on port 10062
+1552645082479	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 10304, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552645116617	Marionette	INFO	Stopped listening on port 10062
+[Parent 10304, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 22236, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 22236, C[Child 11796, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 11796, Chrome_Chil[Parent 10304, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1552740206840	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.BIS74LbHmcK7"
+1552740208456	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552740208457	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552740211598	Marionette	INFO	Listening on port 10681
+1552740211809	Marionette	WARN	TLS certificate errors will be ignored for this session
+1552740246486	Marionette	INFO	Stopped listening on port 10681
+[Parent 8988, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 18980, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 18980, Chrome_ChildThread] WARNING: pipe[Child 
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+6788, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 6788, Chrome_ChildThre[Parent 8988, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 21712, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1552740503634	mozrunner::runner	INFO	Running command: "C:\\software\\Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\simona\\AppData\\Local\\Temp\\rust_mozprofile.gTdZFvBDRaiM"
+1552740504823	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552740504823	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552740507021	Marionette	INFO	Listening on port 10965
+1552740507282	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 11352, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+1552740541074	Marionette	INFO	Stopped listening on port 10965
+[Child 22096, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 22096, Ch[Parent 11352, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 5436, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 5436, Chrome_ChildT[Child 22360, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
+[Child 22360
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
