@@ -57,7 +57,7 @@ class MyThread(threading.Thread):
     def run(self):
         while(True):
             try:
-                task = self.queue.get(block=True, timeout=100)
+                task = self.queue.get(block=True, timeout=300)
                 self.func(task)
                 self.queue.task_done()
             except :
@@ -162,7 +162,8 @@ def insertDB(sql_value):
         mylock2.release()
         fp.write(sql + ';\n')
         fp.flush()
-        # 如果发生错误则回滚
+        # 如果发生错误则先提交后回滚
+        db.commit()
         db.rollback()
 
 

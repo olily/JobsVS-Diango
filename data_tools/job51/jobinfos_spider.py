@@ -51,7 +51,7 @@ class MyThread(threading.Thread):
     def run(self):
         while(True):
             try:
-                task = self.queue.get(block=True,timeout=100)
+                task = self.queue.get(block=True,timeout=300)
                 self.func(task)
                 # print(self.func)
                 self.queue.task_done()
@@ -216,16 +216,18 @@ def insertDB(sql_value):
         mylock2.acquire()
         save_num += 1
         cursor.execute(sql)
+        print(save_num)
         if save_num % 1000 == 0:
             db.commit()
-            if save_num % 10000==0:
+            if save_num % 10000 == 0:
                 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),"save",save_num)
         mylock2.release()
     except :
         mylock2.release()
         fp.write(sql + ';\n')
         fp.flush()
-        # 如果发生错误则回滚
+        # 如果发生错误则先提交再回滚
+        db.commit()
         db.rollback()
 
 # 浏览器代理池
@@ -267,7 +269,7 @@ jobs_queue = Queue()
 save_num = 0
 
 pool = MyThreadPool()
-pool.addthread(queue=q, size=20,func=get_job_detail)
+pool.addthread(queue=q, size=18,func=get_job_detail)
 pool.addthread(queue=jobs_queue, size=5,func=insertDB)
 pool.startAll()
 pool.joinAll()
