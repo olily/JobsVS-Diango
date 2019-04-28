@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# encoding: utf-8
-
 import xadmin
 from xadmin import views
-from .models import VerifyCode
+from .models import UserProfile
 
 
 class BaseSetting(object):
@@ -12,15 +9,14 @@ class BaseSetting(object):
 
 
 class GlobalSettings(object):
-    site_title = "招聘信息可视化后台"
-    site_footer = "jobsvs"
-    # menu_style = "accordion"
+    site_title = "OnlineJudge"
+    site_footer = "957824770@qq.com"
 
 
-class VerifyCodeAdmin(object):
-    list_display = ['code', 'mobile', "add_time"]
+class UserProfileAdmin(object):
+    search_fields = []
 
 
-xadmin.site.register(VerifyCode, VerifyCodeAdmin)
+xadmin.site.register(UserProfile, UserProfileAdmin)
 xadmin.site.register(views.BaseAdminView, BaseSetting)
 xadmin.site.register(views.CommAdminView, GlobalSettings)

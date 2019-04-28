@@ -1,3 +1,4 @@
+import pymysql
 """
 Django settings for JobsVS project.
 
@@ -12,32 +13,25 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
-
-# 建立根目录将文件路径从绝对路径缩短为相对路径
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0,BASE_DIR)
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
-sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import pymysql
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-c2e=9(k=m@i0^@r995kr1jhzb9($tdo7-!i(t_y=lw2^h)=4d'
+SECRET_KEY = 'zn3!_4zsnrcin)0b-f)gqd*#k$gc1t%3iq!ye7=tz_0k%41*0b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-AUTH_USER_MODEL = 'users.UserProfile'
-
+ALLOWED_HOSTS = ['*']
+AUTH_USER_MODEL = 'users.User'
 
 # Application definition
 
@@ -48,16 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DjangoUeditor',
+    'apps.users.apps.UsersConfig',
+    'apps.city.apps.CityConfig',
+    'apps.company.apps.CompanyConfig',
+    'apps.education.apps.EducationConfig',
+    'apps.job.apps.JobConfig',
+    'apps.user_operation.apps.UserOperationConfig',
     'xadmin',
     'crispy_forms',
-    'user_operation',
-    'users',
+    'django_filters',
     'rest_framework',
-    'cities',
-    'companies',
-    'jobs',
-    'relations'
+    'corsheaders',
+    'rest_framework.authtoken',
+    'django_cleanup'
+
 ]
 
 MIDDLEWARE = [
@@ -69,14 +67,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'JobsVS.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,19 +89,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'JobsVS.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "jobsvs",
-        'USER': "root",
+        'NAME': "jobs",
+        'USER': 'root',
         'PASSWORD': "123456",
         'HOST': "127.0.0.1",
-        'PORT': '3306',
         "OPTIONS": {"init_command": "SET default_storage_engine=INNODB;"}
-
     }
 }
 
@@ -125,7 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+AUTHENTICATION_BACKENDS = [
+    'apps.users.views.CustomBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -138,11 +137,24 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/media/'
+MEDIA_URL = '/media/'
+# MEDIA_ROOT = '/file/'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
+    ),
+}
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+}
