@@ -1,0 +1,3 @@
+2019-05-07 10:33:00
+insert into co_info_simple values("co3692987","上海药明生物技术有限公司", "合资","1000-5000人", "上海","制药/生物工程", "https://jobs.51job.com/all/co3692987.html");
+insert into co_info_simple values("co3456551","广州银行信用卡中心", "国企","1000-5000人", "广州","金融/投资/证券", "https://jobs.51job.com/all/co3456551.html");

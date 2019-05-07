@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 __author__ = 'olily'
 
-# 0401建立文件，爬取51job所有城市分类名称(移动端)
-# 多线程处理优化：一条线程跑一个城市
-# 0402 将数据写入数据库永久保存
+# 0507 创建 爬取企业信息（简要）
+
 
 from bs4 import BeautifulSoup as bs
-import pandas as pd
 import requests
 import threading
 from queue import Queue
@@ -19,8 +17,6 @@ print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 # 设置临界区（资源锁）
 mylock = threading.RLock()
 mylock2 = threading.RLock()
-# 读取城市url
-cityAndurl = pd.read_csv('data/phone_city_url.csv', engine='python')
 
 # 测试速度用
 city_num = 0
@@ -31,11 +27,11 @@ save_num = 0
 # 解析网页
 def html_paser(url, headers):
     try:
-        response = requests.get(url, headers)
+        response = requests.get(url)
     except :
         return 0
     else:
-        response.encoding = 'utf-8'
+        response.encoding = 'gbk'
         html_text = response.text
         html = bs(html_text, 'html.parser')
         return html
@@ -87,70 +83,82 @@ class MyThreadPool():
 def product_data(user_agent_list):
     cities_queue = Queue()
 
-    for i in range(0, cityAndurl.shape[0]):
+    for i in range(1, 3018):
         data_row = []
-        data_row.append(cityAndurl.iloc[i][0])
-        data_row.append(cityAndurl.loc[i]['city_url'])
+        data_row.append("https://company.51job.com/p"+str(i)+"/")
         data_row.append(user_agent_list[i % 12])
         Producer.producer(cities_queue, data_row)
     return cities_queue
 
 
-# 翻页爬取每一个城市的所有岗位
-def turn_page_thread(submission):
-    city = submission[0]
-    city_url = submission[1]
-    browser = submission[2]
+# 翻页爬取每一页的所有企业
+def spider_page(submission):
+    url = submission[0]
+    browser = submission[1]
     header = {
         'User-Agent': browser,
         'verify': False
     }
     global num
 
-    # 翻页遍历所有岗位
-    j = 0
-    while (True):
-        j += 1
-        city_page_url = city_url + 'p' + str(j)
-        html = html_paser(city_page_url, header)
-        if html == 0:
-            continue
+    # 遍历一页所有岗位
+    html = html_paser(url, header)
+    co_main_div = html.find(attrs={'class': 'c2-main'})
+    co_items = co_main_div.findAll(attrs={'class': 'c2-t'})
+    for item in co_items:
+        co_id=co_name=co_quality=co_size=city=industry=co_url=None
+        co_name_url = item.find(attrs={'class': 's1'})
+        if co_name_url is not None:
+            co_url = co_name_url.a.get('href')
 
-        job_href_page = html.find(attrs={'class': 'items'})
-        job_href_pages = job_href_page.find_all('a')
+            regx = re.compile('co[0-9]+.html')
+            co_id_str = regx.findall(co_url)
+            co_id = str(co_id_str[0][:-5])
 
-        # 判断是否遍历到达最后一个页面
-        if len(job_href_pages) == 0:
-            global city_num
-            city_num += 1
-            print(datetime.datetime.now().strftime(
-                '%Y-%m-%d %H:%M:%S'), city_num, num, city, "完成")
-            break
+            co_name = co_name_url.a.get("title")
 
-        for page_href in job_href_pages:
-            job_url = page_href.get('href')
 
-            regx = re.compile('[0-9]+.html')
-            job_num_str = regx.findall(job_url)
-            job_num = job_num_str[0][:-5]
-            joburl_row = [job_num, city, job_url]
+        co_quality_span = item.find(attrs={'class': 's2'})
+        if co_quality_span is not None:
+            co_quality = co_quality_span.text
 
-            mylock.acquire()
-            num += 1
-            Producer.producer(joburls_queue, joburl_row)
-            mylock.release()
+        co_size_span = item.find(attrs={'class': 's3'})
+        if co_size_span is not None:
+            co_size = co_size_span.text
+
+        city_span = item.find(attrs={'class': 's4'})
+        if city_span is not None:
+            city = city_span.text
+
+        industry_span = item.find(attrs={'class': 's5'})
+        if industry_span is not None:
+            industry = industry_span.text
+
+        co_row = [co_id,co_name,co_quality,co_size,city,industry,co_url]
+
+        mylock.acquire()
+        num += 1
+        Producer.producer(courls_queue, co_row)
+        mylock.release()
+
+        if(num%10000)==0:
+            print(num)
+
 
 
 def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into job_url_info values( %d, "%s","%s")' % (int(sql_value[0]), str(sql_value[1]), str(sql_value[2]))
+    sql = 'insert into co_info_simple values("%s","%s", "%s","%s", "%s","%s", "%s")' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),str(sql_value[6]))
     # SQL 插入语句
     try:
         mylock2.acquire()
         save_num += 1
+        print(save_num)
+        # print(sql)
         cursor.execute(sql)
+        # print(sql)
         if save_num % 1000 == 0:
             db.commit()
             if save_num % 10000==0:
@@ -161,6 +169,7 @@ def insertDB(sql_value):
         fp.write(sql + ';\n')
         fp.flush()
         # 如果发生错误则先提交后回滚
+        # print(sql)
         db.commit()
         db.rollback()
 
@@ -185,22 +194,22 @@ user_agent_list = [
 db = pymysql.connect("localhost", "root", "123456", "jobs51", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
-cursor.execute('truncate table job_url_info')
+cursor.execute('truncate table co_info_simple')
 db.commit()
 
-f = open("data/errsql.txt", "w+", encoding="utf-8")
+f = open("data/co_errsql.txt", "w+", encoding="utf-8")
 f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '\n')
 f.close()
 
-fp = open("data/errsql.txt", "a+", encoding="utf-8")
+fp = open("data/co_errsql.txt", "a+", encoding="utf-8")
 
 maxsize = 18
 q = product_data(user_agent_list)
-joburls_queue = Queue()
+courls_queue = Queue()
 
 pool = MyThreadPool()
-pool.addthread(queue=q, size=maxsize, func=turn_page_thread)
-pool.addthread(queue=joburls_queue, size=5, func=insertDB)
+pool.addthread(queue=q, size=maxsize, func=spider_page)
+pool.addthread(queue=courls_queue, size=5, func=insertDB)
 pool.startAll()
 pool.joinAll()
 

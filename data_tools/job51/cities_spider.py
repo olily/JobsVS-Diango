@@ -33,7 +33,7 @@ def insertDB(table_name, index_id,sql_value):
 # 解析网页
 def html_paser(url, headers):
     response = requests.get(url, headers)
-    response.encoding = 'utf-8'
+    response.encoding = 'gbk'
     html_text = response.text
 
     html = bs(html_text, 'html.parser')
@@ -113,5 +113,5 @@ for row in cityAndurl.iterrows():
 
 db.close()
 
-cityAndurl.to_csv('data/phone_city_url2.csv')
+# cityAndurl.to_csv('data/phone_city_url2.csv')
 # ,encoding='gb2312'

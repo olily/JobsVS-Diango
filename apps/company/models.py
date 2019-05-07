@@ -5,10 +5,28 @@ from apps.city.models import Cities
 
 class Industries(models.Model):
     name = models.CharField(
-        unique=True,
         db_index=True,
         max_length=255,
         verbose_name="行业")
+    industry_id = models.CharField(
+        unique=True,
+        default = None,
+        db_index=True,
+        max_length=255,
+        verbose_name="行业代码")
+    category = models.ForeignKey(
+        "self",
+        null=True,
+        blank=True,
+        db_index=True,
+        max_length=255,
+        verbose_name="行业分类")
+    url = models.CharField(
+        db_index=True,
+        null=True,
+        blank=True,
+        max_length=255,
+        verbose_name="url")
 
     def __str__(self):
         return self.name

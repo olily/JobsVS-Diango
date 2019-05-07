@@ -2,67 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31b0f90a-b77b-4aac-8473-112d609a19e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/city/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/company/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/education/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/job/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/job/migrations/0002_auto_20190428_1116.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/migrations/0002_auto_20190507_1513.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/migrations/0003_auto_20190507_1546.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/job/migrations/0002_auto_20190507_1513.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/job/migrations/0003_auto_20190507_1544.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JobsVS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobsVS/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobsVS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobsVS/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/city/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/adminx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cities/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/education/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/adminx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/job/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/companies/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/adminx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/jobs/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/adminx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/relations/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_operation/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/adminx.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/city/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/city/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/company/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/company/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/education/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/education/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/job/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/job/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/job/migrations/0002_auto_20190428_1116.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_tools/job51/data/job_info_errsql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data_tools/job51/data/job_info_errsql.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/cities_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_tools/job51/cities_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/jobs_spider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/joburl_spider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/joburls_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_tools/job51/joburls_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/mphone_url_spider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,18 +37,21 @@
     <SUITE FILE_PATH="coverage/JobsVS$ProxyIP.coverage" NAME="ProxyIP Coverage Results" MODIFIED="1552616422947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
     <SUITE FILE_PATH="coverage/JobsVS$manage.coverage" NAME="manage Coverage Results" MODIFIED="1555923888440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/JobsVS$lagou_category.coverage" NAME="lagou_category Coverage Results" MODIFIED="1551081177049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
+    <SUITE FILE_PATH="coverage/JobsVS$company_spider_simple.coverage" NAME="company_spider_simple Coverage Results" MODIFIED="1557196378940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
+    <SUITE FILE_PATH="coverage/JobsVS$industries_spider.coverage" NAME="industries_spider Coverage Results" MODIFIED="1557215243511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$lagou.coverage" NAME="lagou Coverage Results" MODIFIED="1551943675418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
     <SUITE FILE_PATH="coverage/JobsVS$service.coverage" NAME="service Coverage Results" MODIFIED="1552288216375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/envs/VueShop/Lib/site-packages/selenium/webdriver/common" />
-    <SUITE FILE_PATH="coverage/JobsVS$joburl_spider.coverage" NAME="joburl_spider Coverage Results" MODIFIED="1554025303005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$mphone_url_spider.coverage" NAME="mphone_url_spider Coverage Results" MODIFIED="1554128788581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
+    <SUITE FILE_PATH="coverage/JobsVS$joburl_spider.coverage" NAME="joburl_spider Coverage Results" MODIFIED="1557164220573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$jobinfos_spider.coverage" NAME="jobinfos_spider Coverage Results" MODIFIED="1556416701073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$joburls_spider.coverage" NAME="joburls_spider Coverage Results" MODIFIED="1556083536119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
-    <SUITE FILE_PATH="coverage/JobsVS$cities_spider.coverage" NAME="cities_spider Coverage Results" MODIFIED="1554186476942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
+    <SUITE FILE_PATH="coverage/JobsVS$cities_spider.coverage" NAME="cities_spider Coverage Results" MODIFIED="1557200407100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$element.coverage" NAME="element Coverage Results" MODIFIED="1551077843358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/envs/VueShop/Lib/site-packages/bs4" />
     <SUITE FILE_PATH="coverage/JobsVS$jobs_spider.coverage" NAME="jobs_spider Coverage Results" MODIFIED="1554171919728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
     <SUITE FILE_PATH="coverage/JobsVS$spider_jobs_url.coverage" NAME="spider_jobs_url Coverage Results" MODIFIED="1552736346404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
     <SUITE FILE_PATH="coverage/JobsVS$github_spider1.coverage" NAME="github_spider1 Coverage Results" MODIFIED="1551926811662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
     <SUITE FILE_PATH="coverage/JobsVS$lagou_spider.coverage" NAME="lagou_spider Coverage Results" MODIFIED="1551950120901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools" />
+    <SUITE FILE_PATH="coverage/JobsVS$jobfunction_spider.coverage" NAME="jobfunction_spider Coverage Results" MODIFIED="1557215104338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_tools/job51" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -111,17 +74,17 @@
     <session id="1962848847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="45" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="17" />
-          <entry key="project.open.time.7" value="11" />
-          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.6" value="19" />
+          <entry key="project.open.time.7" value="12" />
+          <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="47" />
+          <entry key="project.opened" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -131,7 +94,7 @@
           <entry key="json" value="3" />
           <entry key="md" value="2" />
           <entry key="pkl" value="8" />
-          <entry key="py" value="140" />
+          <entry key="py" value="160" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
@@ -141,7 +104,7 @@
           <entry key="JSON" value="3" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="94" />
-          <entry key="Python" value="140" />
+          <entry key="Python" value="160" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
@@ -149,16 +112,16 @@
         <counts>
           <entry key="Django Console" value="29" />
           <entry key="md" value="75" />
-          <entry key="py" value="22756" />
-          <entry key="py@JobsVS" value="407" />
+          <entry key="py" value="24629" />
+          <entry key="py@JobsVS" value="516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CommandLine" value="325" />
+          <entry key="CommandLine" value="420" />
           <entry key="Markdown" value="75" />
-          <entry key="PLAIN_TEXT" value="82" />
-          <entry key="Python" value="22785" />
+          <entry key="PLAIN_TEXT" value="96" />
+          <entry key="Python" value="24658" />
         </counts>
       </usages-collector>
     </session>
@@ -171,19 +134,78 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JobsVS/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1282">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="1121">
+              <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_tools/job51/company_spider_simple.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="115" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/city/models.py">
+        <entry file="file://$PROJECT_DIR$/data_tools/job51/industries_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="95">
+              <caret line="146" column="12" lean-forward="true" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_tools/job51/jobfunction_spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="152" column="27" lean-forward="true" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/company/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-247">
+              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/job/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_tools/job51/cities_spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#75#110#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/city/migrations/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -191,8 +213,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Setup Script" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -201,7 +223,6 @@
       <find>H</find>
       <find>常见问题</find>
       <find>ip</find>
-      <find>print</find>
       <find>100</find>
       <find>完成</find>
       <find>city</find>
@@ -222,12 +243,13 @@
       <find>index[0]</find>
       <find>bei</find>
       <find>jobAndurl</find>
-      <find>num</find>
       <find>data</find>
       <find>z</find>
       <find>code</find>
       <find>use</find>
       <find>timeo</find>
+      <find>print</find>
+      <find>num</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -247,9 +269,7 @@
         <option value="$PROJECT_DIR$/data_tools/拉spider_jobs_url.py" />
         <option value="$PROJECT_DIR$/data_tools/spider_jobs_url.py" />
         <option value="$PROJECT_DIR$/data_tools/lagou_login_spider.py" />
-        <option value="$PROJECT_DIR$/data_tools/job51/joburl_spider.py" />
         <option value="$PROJECT_DIR$/data_tools/job51/jobs_spider.py" />
-        <option value="$PROJECT_DIR$/data_tools/job51/cities_spider.py" />
         <option value="$PROJECT_DIR$/data_tools/job51/mphone_url_spider.py" />
         <option value="$PROJECT_DIR$/write.md" />
         <option value="$PROJECT_DIR$/apps/users/adminx.py" />
@@ -259,9 +279,7 @@
         <option value="$PROJECT_DIR$/apps/jobs/adminx.py" />
         <option value="$PROJECT_DIR$/apps/relations/adminx.py" />
         <option value="$PROJECT_DIR$/apps/cities/adminx.py" />
-        <option value="$PROJECT_DIR$/data_tools/job51/joburls_spider.py" />
         <option value="$PROJECT_DIR$/test1.py" />
-        <option value="$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py" />
         <option value="$PROJECT_DIR$/data_tools/job51/jobinfos_spider.py" />
         <option value="$PROJECT_DIR$/apps/companies/models.py" />
         <option value="$PROJECT_DIR$/apps/jobs/models.py" />
@@ -270,7 +288,16 @@
         <option value="$PROJECT_DIR$/JobsVS/urls.py" />
         <option value="$PROJECT_DIR$/apps/educations/apps.py" />
         <option value="$PROJECT_DIR$/apps/users/apps.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/joburl_spider.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/company_spider_simple.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/joburls_spider.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/cities_spider.py" />
         <option value="$PROJECT_DIR$/JobsVS/settings.py" />
+        <option value="$PROJECT_DIR$/apps/job/models.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/jobfunction_spider.py" />
+        <option value="$PROJECT_DIR$/apps/company/models.py" />
+        <option value="$PROJECT_DIR$/data_tools/job51/industries_spider.py" />
       </list>
     </option>
   </component>
@@ -281,10 +308,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="993" />
-    <option name="y" value="177" />
+    <option name="x" value="445" />
+    <option name="y" value="6" />
     <option name="width" value="1293" />
-    <option name="height" value="678" />
+    <option name="height" value="1046" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -294,6 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,7 +338,24 @@
               <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="city" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="job" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
+              <item name="data_tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
+              <item name="data_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="job51" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
@@ -321,7 +366,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,22 +373,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySupportQtDebugging" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\pyvm\JobsVS\apps" />
-      <recent name="C:\pyvm\JobsVS\data_tools" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\pyvm\JobsVS\JobsVS" />
       <recent name="C:\pyvm\JobsVS\apps" />
       <recent name="C:\pyvm\JobsVS\apps\user_operation" />
       <recent name="C:\pyvm\JobsVS\apps\jobs" />
       <recent name="C:\pyvm\JobsVS\apps\companies" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\pyvm\JobsVS\apps" />
+      <recent name="C:\pyvm\JobsVS\data_tools" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -359,7 +403,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.JobsVS">
+  <component name="RunManager" selected="Python.industries_spider">
     <configuration name="ProxyIP" type="PythonConfigurationType" factoryName="Python">
       <module name="JobsVS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -382,7 +426,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="jobinfos_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="cities_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="JobsVS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -395,7 +439,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/jobinfos_spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/cities_spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -404,7 +448,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="joburls_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="company_spider_simple" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="JobsVS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -417,7 +461,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/joburls_spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/company_spider_simple.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -426,29 +470,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="JobsVS" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="phone_joburl_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="industries_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="JobsVS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -461,7 +483,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/industries_spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -470,7 +492,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="jobfunction_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="JobsVS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -478,12 +500,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_tools/job51" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/jobfunction_spider.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="joburl_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="JobsVS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_tools/job51" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_tools/job51/joburl_spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -519,19 +563,19 @@
     <list>
       <item itemvalue="Django server.JobsVS" />
       <item itemvalue="Python.ProxyIP" />
-      <item itemvalue="Python.phone_joburl_spider" />
-      <item itemvalue="Python.jobinfos_spider" />
-      <item itemvalue="Python.manage" />
-      <item itemvalue="Python.joburls_spider" />
-      <item itemvalue="Python.test1" />
+      <item itemvalue="Python.company_spider_simple" />
+      <item itemvalue="Python.joburl_spider" />
+      <item itemvalue="Python.cities_spider" />
+      <item itemvalue="Python.industries_spider" />
+      <item itemvalue="Python.jobfunction_spider" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.jobinfos_spider" />
-        <item itemvalue="Python.phone_joburl_spider" />
-        <item itemvalue="Python.test1" />
-        <item itemvalue="Python.joburls_spider" />
-        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.industries_spider" />
+        <item itemvalue="Python.jobfunction_spider" />
+        <item itemvalue="Python.cities_spider" />
+        <item itemvalue="Python.company_spider_simple" />
+        <item itemvalue="Python.joburl_spider" />
       </list>
     </recent_temporary>
   </component>
@@ -558,15 +602,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.59963435" visible="true" weight="0.15060729" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.59963435" visible="true" weight="0.16275303" />
       <window_info id="Structure" order="1" sideWeight="0.4008529" side_tool="true" weight="0.1417004" />
       <window_info id="Favorites" order="2" sideWeight="0.40036562" side_tool="true" weight="0.21862349" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906765" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.7038391" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.22303474" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49959514" weight="0.4917733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -577,7 +621,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.29392713" side_tool="true" weight="0.4734918" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.7129799" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32723948" />
-      <window_info anchor="bottom" id="manage.py@JobsVS" order="13" visible="true" weight="0.21755028" />
+      <window_info anchor="bottom" id="manage.py@JobsVS" order="13" weight="0.36380255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -585,23 +629,23 @@
       <window_info anchor="right" id="Database" order="4" weight="0.32955465" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.59914714" visible="true" weight="0.1417004" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.59963435" visible="true" weight="0.16275303" />
       <window_info id="Structure" order="1" sideWeight="0.4008529" side_tool="true" weight="0.1417004" />
-      <window_info id="Favorites" order="2" sideWeight="0.4008529" side_tool="true" weight="0.1417004" />
+      <window_info id="Favorites" order="2" sideWeight="0.40036562" side_tool="true" weight="0.21862349" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906765" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.6135531" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49959514" weight="0.5959781" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.70607287" visible="true" weight="0.33089578" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49959514" weight="0.4917733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.82815355" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.29392713" side_tool="true" weight="0.4734918" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5531136" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32783884" />
-      <window_info active="true" anchor="bottom" id="manage.py@JobsVS" order="13" visible="true" weight="0.40585008" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.7129799" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32723948" />
+      <window_info anchor="bottom" id="manage.py@JobsVS" order="13" weight="0.36380255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -631,25 +675,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/JudgeServer-master/Producer.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_city_url2.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_city_url1.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/city_url.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/lagou/lagou_login_spider.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/766888250/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="5152" column="8" selection-start-line="5152" selection-start-column="8" selection-end-line="5152" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/mphone_jobs.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/mphone_jobs_urls.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_jobs_urls.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_jobs_urls3.csv" />
     <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_city_url.csv" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/mphone_url_spider.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/cities_spider.py" />
     <entry file="file://$PROJECT_DIR$/manage.py" />
     <entry file="file://$PROJECT_DIR$/write.md" />
     <entry file="file://$PROJECT_DIR$/apps/users/admin.py">
@@ -664,8 +690,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/relations/models.py" />
     <entry file="file://$PROJECT_DIR$/apps/cities/adminx.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/joburl_spider.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/joburls_spider.py" />
     <entry file="file://$PROJECT_DIR$/test1.py" />
     <entry file="file://$PROJECT_DIR$/apps/jobs/adminx.py" />
     <entry file="file://$PROJECT_DIR$/apps/relations/adminx.py" />
@@ -683,9 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/jobs_spider.py" />
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/jobinfos_spider.py" />
     <entry file="file://$PROJECT_DIR$/apps/cities/models.py" />
     <entry file="file://$PROJECT_DIR$/apps/educations/admin.py" />
     <entry file="file://$PROJECT_DIR$/apps/educations/tests.py" />
@@ -733,23 +754,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/city/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/mphone_url_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="202" column="18" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/jobs_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4695" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/jobinfos_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+          <folding>
+            <element signature="e#103#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/joburl_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/phone_joburl_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="14" lean-forward="true" selection-end-line="211" />
+          <folding>
+            <element signature="e#119#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/joburls_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#119#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/company/migrations/0002_auto_20190507_1202.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-335" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="55" column="42" lean-forward="true" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/education/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JobsVS/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/city/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/company/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/cities_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#75#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/company_spider_simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="115" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/job/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JobsVS/settings.py">
+    <entry file="file://$PROJECT_DIR$/apps/company/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1282">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="-247">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/city/models.py">
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/jobfunction_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="86">
+          <caret line="152" column="27" lean-forward="true" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_tools/job51/industries_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="146" column="12" lean-forward="true" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -96,11 +96,12 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "jobs",
+        'NAME': "jobsvs",
         'USER': 'root',
         'PASSWORD': "123456",
         'HOST': "127.0.0.1",
         "OPTIONS": {"init_command": "SET default_storage_engine=INNODB;"}
+
     }
 }
 

@@ -10,7 +10,25 @@ class JobFunctions(models.Model):
     name = models.CharField(
         db_index=True,
         max_length=255,
-        verbose_name="职能名")
+        verbose_name="职能")
+    fun_id = models.CharField(
+        default = None,
+        db_index=True,
+        max_length=255,
+        verbose_name="职能代码")
+    category = models.ForeignKey(
+        "self",
+        null=True,
+        blank=True,
+        db_index=True,
+        max_length=255,
+        verbose_name="职能分类")
+    url = models.CharField(
+        db_index=True,
+        null=True,
+        blank=True,
+        max_length=255,
+        verbose_name="url")
 
     def __str__(self):
         return self.name

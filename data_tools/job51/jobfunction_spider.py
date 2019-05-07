@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 __author__ = 'olily'
 
-# 0401建立文件，爬取51job所有城市分类名称(移动端)
-# 多线程处理优化：一条线程跑一个城市
-# 0402 将数据写入数据库永久保存
+# 0507创建  爬取职能
+
 
 from bs4 import BeautifulSoup as bs
-import pandas as pd
 import requests
 import threading
 from queue import Queue
@@ -19,23 +17,19 @@ print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 # 设置临界区（资源锁）
 mylock = threading.RLock()
 mylock2 = threading.RLock()
-# 读取城市url
-cityAndurl = pd.read_csv('data/phone_city_url.csv', engine='python')
 
 # 测试速度用
-city_num = 0
-num = 0
 save_num = 0
 
 
 # 解析网页
 def html_paser(url, headers):
     try:
-        response = requests.get(url, headers)
+        response = requests.get(url)
     except :
         return 0
     else:
-        response.encoding = 'utf-8'
+        response.encoding = 'gbk'
         html_text = response.text
         html = bs(html_text, 'html.parser')
         return html
@@ -84,62 +78,65 @@ class MyThreadPool():
                 thd.join()
 
 # 构造生产者
-
-
 def product_data(user_agent_list):
     cities_queue = Queue()
 
-    for i in range(0, cityAndurl.shape[0]):
+    for i in range(1, 3018):
         data_row = []
-        data_row.append(cityAndurl.iloc[i][0])
-        data_row.append(cityAndurl.loc[i]['city_url'])
+        data_row.append("https://company.51job.com/p"+str(i)+"/")
         data_row.append(user_agent_list[i % 12])
         Producer.producer(cities_queue, data_row)
     return cities_queue
 
 
-# 翻页爬取每一个城市的所有岗位
-def turn_page_thread(submission):
-    city = submission[0]
-    city_url = submission[1]
-    browser = submission[2]
+# 翻页爬取每一页的所有行业
+def spider_page(submission):
+    url = submission[0]
+    browser = submission[1]
     header = {
         'User-Agent': browser,
         'verify': False
     }
-    global num
 
-    # 翻页遍历所有岗位
-    j = 0
-    while (True):
-        j += 1
-        city_page_url = city_url + 'p' + str(j)
-        html = html_paser(city_page_url, header)
-        if html == 0:
+    # 遍历一页所有岗位
+    html = html_paser(url, header)
+    industry_list_div = html.find(attrs={'class': 'dw_list dw_site'})
+    industry_items = industry_list_div.findAll('li')
+    # print(industry_items)
+
+    j= 1
+    for item in industry_items:
+        if item==None or item.a==None:
             continue
 
-        job_href_page = html.find(attrs={'class': 'items'})
-        job_href_pages = job_href_page.find_all('a')
+        # 保存行业分类
+        category_name = item.a.text
+        sql = 'insert into jobfunction(name,fun_id,url) values("%s","%s", "%s")' % (category_name, j,None)
+        cursor.execute(sql)
+        j+=1
+    db.commit()
 
-        # 判断是否遍历到达最后一个页面
-        if len(job_href_pages) == 0:
-            global city_num
-            city_num += 1
-            print(datetime.datetime.now().strftime(
-                '%Y-%m-%d %H:%M:%S'), city_num, num, city, "完成")
-            break
+    i=0
+    for item in industry_items:
+        if item==None or item.a==None:
+            continue
+        i += 1
+        # 遍历保存行业
+        industry_li = item.div.findAll('a')
+        for industry in industry_li:
+            # industry_url=industry_id=industry_name=None
+            industry_name = industry.text
+            industry_url = industry.get('href')
 
-        for page_href in job_href_pages:
-            job_url = page_href.get('href')
+            regx = re.compile('com/.*')
+            industry_url_str = regx.findall(industry_url)
+            industry_id = str(industry_url_str[0][4:])
 
-            regx = re.compile('[0-9]+.html')
-            job_num_str = regx.findall(job_url)
-            job_num = job_num_str[0][:-5]
-            joburl_row = [job_num, city, job_url]
+            category_id = i
 
+            row = [industry_name,industry_id,industry_url,category_id]
             mylock.acquire()
-            num += 1
-            Producer.producer(joburls_queue, joburl_row)
+            Producer.producer(courls_queue, row)
             mylock.release()
 
 
@@ -147,16 +144,14 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into job_url_info values( %d, "%s","%s")' % (int(sql_value[0]), str(sql_value[1]), str(sql_value[2]))
+    sql = 'insert into jobfunction(name,fun_id,url,category_id) values("%s","%s", "%s",%d)' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), sql_value[3])
     # SQL 插入语句
     try:
         mylock2.acquire()
         save_num += 1
+        print(save_num)
         cursor.execute(sql)
-        if save_num % 1000 == 0:
-            db.commit()
-            if save_num % 10000==0:
-                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),save_num)
+        db.commit()
         mylock2.release()
     except :
         mylock2.release()
@@ -184,30 +179,38 @@ user_agent_list = [
 ]
 
 # 打开数据库连接
-db = pymysql.connect("localhost", "root", "123456", "jobs51", charset='utf8')
+db = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
-cursor.execute('truncate table job_url_info')
+
+# 每次获取新数据前清空表
+cursor.execute('SET foreign_key_checks = 0')
+cursor.execute('truncate table jobfunction')
+cursor.execute('SET foreign_key_checks = 1')
 db.commit()
 
-f = open("data/errsql.txt", "w+", encoding="utf-8")
+f = open("data/function_errsql.txt", "w+", encoding="utf-8")
 f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '\n')
 f.close()
 
-fp = open("data/errsql.txt", "a+", encoding="utf-8")
+fp = open("data/function_errsql.txt", "a+", encoding="utf-8")
 
 maxsize = 18
 q = product_data(user_agent_list)
-joburls_queue = Queue()
+courls_queue = Queue()
 
 pool = MyThreadPool()
-pool.addthread(queue=q, size=maxsize, func=turn_page_thread)
-pool.addthread(queue=joburls_queue, size=5, func=insertDB)
+# pool.addthread(queue=q, size=maxsize, func=spider_page)
+
+submission = ["https://www.51job.com/sitemap/position_Navigate.php",user_agent_list[0]]
+spider_page(submission)
+pool.addthread(queue=courls_queue, size=1, func=insertDB)
 pool.startAll()
 pool.joinAll()
 
-db.commit()
 db.close()
 fp.close()
 
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),save_num, "结束")
+
+
