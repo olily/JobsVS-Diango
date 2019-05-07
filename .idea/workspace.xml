@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31b0f90a-b77b-4aac-8473-112d609a19e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/city/migrations/0002_auto_20190507_1553.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/education/migrations/0002_remove_education_education.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/city/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/city/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_tools/job51/cities_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_tools/job51/cities_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/education/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/education/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +76,7 @@
           <entry key="json" value="3" />
           <entry key="md" value="2" />
           <entry key="pkl" value="8" />
-          <entry key="py" value="164" />
+          <entry key="py" value="165" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
@@ -87,7 +86,7 @@
           <entry key="JSON" value="3" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="94" />
-          <entry key="Python" value="164" />
+          <entry key="Python" value="165" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
@@ -95,7 +94,7 @@
         <counts>
           <entry key="Django Console" value="29" />
           <entry key="md" value="75" />
-          <entry key="py" value="25313" />
+          <entry key="py" value="25342" />
           <entry key="py@JobsVS" value="516" />
         </counts>
       </usages-collector>
@@ -104,7 +103,7 @@
           <entry key="CommandLine" value="420" />
           <entry key="Markdown" value="75" />
           <entry key="PLAIN_TEXT" value="96" />
-          <entry key="Python" value="25342" />
+          <entry key="Python" value="25371" />
         </counts>
       </usages-collector>
     </session>
@@ -132,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_tools/job51/cities_spider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
@@ -140,6 +139,15 @@
               <folding>
                 <element signature="e#75#110#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/education/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -256,6 +264,7 @@
         <option value="$PROJECT_DIR$/data_tools/job51/industries_spider.py" />
         <option value="$PROJECT_DIR$/apps/city/models.py" />
         <option value="$PROJECT_DIR$/data_tools/job51/cities_spider.py" />
+        <option value="$PROJECT_DIR$/apps/education/models.py" />
       </list>
     </option>
   </component>
@@ -265,7 +274,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="445" />
     <option name="y" value="6" />
     <option name="width" value="1293" />
@@ -295,13 +304,8 @@
             <path>
               <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
-              <item name="data_tools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
-              <item name="data_tools" type="462c0819:PsiDirectoryNode" />
-              <item name="job51" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="education" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
@@ -556,7 +560,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.40036562" side_tool="true" weight="0.21862349" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906765" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.70607287" visible="true" weight="0.17001829" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.34917733" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49959514" weight="0.4917733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -567,7 +571,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.29392713" side_tool="true" weight="0.4734918" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.7129799" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32723948" />
-      <window_info anchor="bottom" id="manage.py@JobsVS" order="13" weight="0.3235832" />
+      <window_info active="true" anchor="bottom" id="manage.py@JobsVS" order="13" visible="true" weight="0.09140768" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -621,7 +625,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data_tools/job51/data/phone_city_url.csv" />
     <entry file="file://$PROJECT_DIR$/manage.py" />
     <entry file="file://$PROJECT_DIR$/write.md" />
     <entry file="file://$PROJECT_DIR$/apps/users/admin.py">
@@ -839,6 +842,13 @@
           <folding>
             <element signature="e#75#110#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/education/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
         </state>
       </provider>
     </entry>
