@@ -25,7 +25,19 @@ class Cities(models.Model):
         unique=True,
         db_index=True,
         max_length=255,
+        verbose_name="城市")
+    city_zh = models.CharField(
+        blank=True,
+        null=True,
+        db_index=True,
+        max_length=255,
         verbose_name="城市名")
+    url = models.CharField(
+        blank=True,
+        null=True,
+        db_index=True,
+        max_length=255,
+        verbose_name="url")
 
     def __str__(self):
         return self.name
