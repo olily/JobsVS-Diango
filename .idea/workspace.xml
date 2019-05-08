@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31b0f90a-b77b-4aac-8473-112d609a19e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/city/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/city/migrations/0002_auto_20190507_1553.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/company/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/migrations/0002_auto_20190507_1513.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/migrations/0003_auto_20190507_1546.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/migrations/0004_auto_20190507_1837.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/education/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/education/migrations/0002_remove_education_education.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/job/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/job/migrations/0002_auto_20190507_1513.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/job/migrations/0003_auto_20190507_1544.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/job/migrations/0004_auto_20190507_2257.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/job/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/user_operation/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/adminx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +63,7 @@
     <session id="1962848847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="51" />
+          <entry key="project.closed" value="52" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.11" value="2" />
@@ -112,14 +102,14 @@
           <entry key="Django Console" value="29" />
           <entry key="md" value="75" />
           <entry key="py" value="26605" />
-          <entry key="py@JobsVS" value="538" />
+          <entry key="py@JobsVS" value="585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CommandLine" value="442" />
+          <entry key="CommandLine" value="449" />
           <entry key="Markdown" value="75" />
-          <entry key="PLAIN_TEXT" value="96" />
+          <entry key="PLAIN_TEXT" value="136" />
           <entry key="Python" value="26634" />
         </counts>
       </usages-collector>
@@ -239,7 +229,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="429" />
     <option name="y" value="93" />
     <option name="width" value="1293" />
@@ -260,6 +250,11 @@
             <path>
               <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JobsVS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JobsVS" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -504,12 +499,12 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.59963435" visible="true" weight="0.25263157" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.59963435" visible="true" weight="0.25263157" />
       <window_info id="Structure" order="1" sideWeight="0.4008529" side_tool="true" weight="0.1417004" />
       <window_info id="Favorites" order="2" sideWeight="0.40036562" side_tool="true" weight="0.21862349" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32906765" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.10420475" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70607287" weight="0.5100548" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49959514" weight="0.4917733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -520,7 +515,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.29392713" side_tool="true" weight="0.4734918" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.7129799" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32723948" />
-      <window_info active="true" anchor="bottom" id="manage.py@JobsVS" order="13" visible="true" weight="0.7184644" />
+      <window_info anchor="bottom" id="manage.py@JobsVS" order="13" visible="true" weight="0.19561243" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
