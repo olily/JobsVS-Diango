@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'olily'
 
-# 0507 创建 爬取企业信息（简要）
-
-
+# 0507 创建 更新企业信息
 from bs4 import BeautifulSoup as bs
 import requests
 import threading
@@ -12,23 +10,28 @@ import datetime
 import re
 import pymysql
 
-print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
+from bs4 import BeautifulSoup as bs
+import requests
+import threading
+from queue import Queue
+import datetime
+import pymysql
 
 # 设置临界区（资源锁）
 mylock = threading.RLock()
 mylock2 = threading.RLock()
 
+
 # 测试速度用
-city_num = 0
 num = 0
-save_num = 0
 
 
 # 解析网页
 def html_paser(url, headers):
     try:
-        response = requests.get(url)
-    except :
+        response = requests.get(url, headers)
+    except BaseException:
         return 0
     else:
         response.encoding = 'gbk'
@@ -37,6 +40,7 @@ def html_paser(url, headers):
         return html
 
 
+# 生产者模型
 class Producer(object):
     @staticmethod
     def producer(q, data):
@@ -45,7 +49,7 @@ class Producer(object):
 
 # 建立线程函数
 class MyThread(threading.Thread):
-    def __init__(self, queue, func):
+    def __init__(self, queue,func):
         threading.Thread.__init__(self)
         self.queue = queue
         self.func = func
@@ -53,10 +57,11 @@ class MyThread(threading.Thread):
     def run(self):
         while(True):
             try:
-                task = self.queue.get(block=True, timeout=300)
+                task = self.queue.get(block=True,timeout=300)
                 self.func(task)
+                # print(self.func)
                 self.queue.task_done()
-            except :
+            except BaseException:
                 break
 
 
@@ -65,10 +70,10 @@ class MyThreadPool():
     def __init__(self):
         self.pool = []
 
-    def addthread(self, queue, size, func):
+    def addthread(self,queue,size,func):
         self.queue = queue
         for i in range(size):
-            self.pool.append(MyThread(queue, func))
+            self.pool.append(MyThread(queue,func))
 
     def startAll(self):
         for thd in self.pool:
@@ -79,100 +84,100 @@ class MyThreadPool():
             if thd.isAlive():
                 thd.join()
 
+
 # 构造生产者
-def product_data(user_agent_list):
-    cities_queue = Queue()
-
-    for i in range(1, 3027):
+def cursor_query(user_agent_list):
+    joburls_queue = Queue()
+    query_num = 0
+    # 首先查询全量数据
+    sscursor = pymysql.cursors.SSCursor(db)
+    sscursor.execute('select id,url from companies')
+    while True:
+        # 每次获取时会从上次游标的位置开始移动size个位置，返回size条数据
+        data = sscursor.fetchone()
+        # 数据为空的时候中断循环
+        if not data:
+            break
         data_row = []
-        data_row.append("https://company.51job.com/p"+str(i)+"/")
-        data_row.append(user_agent_list[i % 12])
-        Producer.producer(cities_queue, data_row)
-    return cities_queue
+        data_row.append(data[0])
+        data_row.append(data[1])
+        data_row.append(user_agent_list[query_num%12])
+        # print(data_row)
+        Producer.producer(joburls_queue, data_row)
+        query_num += 1
+    print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),query_num)
+    sscursor.close()
+    del sscursor
+    return joburls_queue
 
 
-# 翻页爬取每一页的所有企业
-def spider_page(submission):
-    url = submission[0]
-    browser = submission[1]
+# 翻页爬取每一个企业详细信息
+def get_job_detail(items):
+    job_url = items[1]
+    browser = items[2]
+    co_id = items[0]
+
     header = {
         'User-Agent': browser,
         'verify': False
     }
+
+    job_html = html_paser(job_url,header)
+    if job_html == 0:
+        return 0
+
+    # 企业图标
+    img_div = job_html.find(attrs={'class':'cimg'})
+    img_url = None
+    if img_div is not None:
+        img_url = img_div.get('src')
+    # print(img_url)
+
+    # 地址
+    location_div = job_html.find(attrs={'class': 'fp'})
+    location = None
+    if location_div is not None:
+        location = location_div.text
+    # print(location)
+
+
     global num
+    num += 1
+    update_row = [
+        img_url,location,co_id]
+    mylock.acquire()
+    Producer.producer(jobs_queue,update_row)
+    mylock.release()
 
-    # 遍历一页所有岗位
-    html = html_paser(url, header)
-    co_main_div = html.find(attrs={'class': 'c2-main'})
-    co_items = co_main_div.findAll(attrs={'class': 'c2-t'})
-    for item in co_items:
-        co_id=co_name=co_quality=co_size=city=industry=co_url=None
-        co_name_url = item.find(attrs={'class': 's1'})
-        if co_name_url is not None:
-            co_url = co_name_url.a.get('href')
-
-            regx = re.compile('co[0-9]+.html')
-            co_id_str = regx.findall(co_url)
-            co_id = str(co_id_str[0][:-5])
-
-            co_name = co_name_url.a.get("title")
-
-
-        co_quality_span = item.find(attrs={'class': 's2'})
-        if co_quality_span is not None:
-            co_quality = co_quality_span.text
-
-        co_size_span = item.find(attrs={'class': 's3'})
-        if co_size_span is not None:
-            co_size = co_size_span.text
-
-        city_span = item.find(attrs={'class': 's4'})
-        if city_span is not None:
-            city = city_span.text
-
-        industry_span = item.find(attrs={'class': 's5'})
-        if industry_span is not None:
-            industry = industry_span.text
-
-        co_row = [co_id,co_name,co_quality,co_size,city,industry,co_url]
-
-        mylock.acquire()
-        num += 1
-        Producer.producer(courls_queue, co_row)
-        mylock.release()
-
-        if(num%10000)==0:
-            print(num)
-
+    if num % 1000 == 0:
+        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),"request",num)
 
 
 def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into companies(co_id,name,quality,size,note_city,note_industry,url) values("%s","%s", "%s","%s", "%s","%s", "%s")' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),str(sql_value[6]))
+    sql = 'update companies set img_url="%s",location="%s" where id=%d'%(sql_value[0],sql_value[1],sql_value[2])
     # SQL 插入语句
     try:
         mylock2.acquire()
         save_num += 1
+        cursor.execute(sql)
         print(save_num)
         # print(sql)
-        cursor.execute(sql)
-        # print(sql)
-        if save_num % 1000 == 0:
+        if save_num % 100 == 0:
             db.commit()
-            if save_num % 10000==0:
-                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),save_num)
+            if save_num % 10000 == 0:
+                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),"save",save_num)
         mylock2.release()
     except :
         mylock2.release()
+        print("err")
         fp.write(sql + ';\n')
         fp.flush()
-        # 如果发生错误则先提交后回滚
-        # print(sql)
+        # 如果发生错误则先提交再回滚
         db.commit()
         db.rollback()
-
 
 # 浏览器代理池
 user_agent_list = [
@@ -190,35 +195,35 @@ user_agent_list = [
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0"
 ]
 
+print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
 # 打开数据库连接
 db = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
-# 每次获取新数据前清空表
-cursor.execute('SET foreign_key_checks = 0')
-cursor.execute('truncate table companies')
-cursor.execute('SET foreign_key_checks = 1')
 
-db.commit()
+# cursor.execute('truncate table job_info')
+# db.commit()
 
-f = open("data/co_errsql.txt", "w+", encoding="utf-8")
+f = open("data/co_update_errsql.txt", "w+", encoding="utf-8")
 f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '\n')
 f.close()
 
-fp = open("data/co_errsql.txt", "a+", encoding="utf-8")
+fp = open("data/co_update_errsql.txt", "a+", encoding="utf-8")
 
-maxsize = 18
-q = product_data(user_agent_list)
-courls_queue = Queue()
+
+q = cursor_query(user_agent_list)
+
+jobs_queue = Queue()
+save_num = 0
 
 pool = MyThreadPool()
-pool.addthread(queue=q, size=maxsize, func=spider_page)
-pool.addthread(queue=courls_queue, size=5, func=insertDB)
+pool.addthread(queue=q, size=18,func=get_job_detail)
+pool.addthread(queue=jobs_queue, size=2,func=insertDB)
 pool.startAll()
 pool.joinAll()
 
-db.commit()
-db.close()
-fp.close()
 
-print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),save_num, "结束")
+db.close()
+
+print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "结束")

@@ -45,19 +45,23 @@ class Jobs(models.Model):
         max_length=255,
         verbose_name="岗位名")
     city = models.ForeignKey(Cities, verbose_name="城市")  # 公司城市有可能和岗位城市不一样
-    company = models.ForeignKey(Companies, verbose_name="公司")
+    company = models.ForeignKey(Companies, verbose_name="公司",blank=True,null=True)
+    note_co = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_企业")
+    note_city = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_城市")
+    note_func = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_职能")
+    note_education = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_学历")
     jobfunction = models.ManyToManyField(JobFunctions, verbose_name="职能",default=None)
-    job_id = models.IntegerField(verbose_name="工作id")  # 用来构造url
+    job_id = models.IntegerField(unique=True,verbose_name="工作id")  # 用来构造url
     head_count = models.IntegerField(default=0, verbose_name="招聘人数")
-    put_time = models.DateField(verbose_name="发布时间")
-    salary_low = models.IntegerField(verbose_name="工资_低")
-    salary_high = models.IntegerField(verbose_name="工资_高")
-    work_year = models.IntegerField(default=0, verbose_name="工作经验")
+    put_time = models.DateField(verbose_name="发布时间",blank=True,null=True,)
+    salary_low = models.IntegerField(verbose_name="工资_低",blank=True,null=True,)
+    salary_high = models.IntegerField(verbose_name="工资_高",blank=True,null=True,)
+    work_year = models.CharField(max_length=255,verbose_name="工作经验",blank=True,null=True,)
     education = models.ForeignKey(Education, verbose_name="学历")
     work_addr = models.CharField(max_length=255, verbose_name="工作地点")
     jobReqAndRes = models.CharField(max_length=255, verbose_name="岗位要求和职责")
     jobfare = models.CharField(max_length=255, verbose_name="工作福利")
-    isUndercarriage = models.BooleanField(default=False, verbose_name="是否下架")
+    isUndercarriage = models.BooleanField(default=False, verbose_name="是否关闭")
 
     def __str__(self):
         return self.name

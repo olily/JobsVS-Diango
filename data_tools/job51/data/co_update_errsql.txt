@@ -1,0 +1,4 @@
+2019-05-07 21:56:34
+update companies set img_url="None",location="
+公司地址：金水区花园路丰产路兰德中心5楼                                        (邮编：450000)
+                            " where id=3;

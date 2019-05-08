@@ -1,3 +1,2 @@
-2019-05-07 10:33:00
-insert into co_info_simple values("co3692987","上海药明生物技术有限公司", "合资","1000-5000人", "上海","制药/生物工程", "https://jobs.51job.com/all/co3692987.html");
-insert into co_info_simple values("co3456551","广州银行信用卡中心", "国企","1000-5000人", "广州","金融/投资/证券", "https://jobs.51job.com/all/co3456551.html");
+2019-05-07 18:43:03
+insert into companies(co_id,name,quality,size,note_city,note_industry,url) values("co5237003","广州天英网络科技有限公司", "民营公司","1000-5000人", "广州","计算机软件", "https://jobs.51job.com/all/co5237003.html");

@@ -6,12 +6,14 @@ from apps.city.models import Cities
 class Industries(models.Model):
     name = models.CharField(
         db_index=True,
+        blank=True,
+        null=True,
         max_length=255,
         verbose_name="行业")
     industry_id = models.CharField(
         unique=True,
-        default = None,
         db_index=True,
+        default=None,
         max_length=255,
         verbose_name="行业代码")
     category = models.ForeignKey(
@@ -39,13 +41,26 @@ class Industries(models.Model):
 
 class Companies(models.Model):
     name = models.CharField(
-        unique=True,
         db_index=True,
+        blank=True,
+        null=True,
         max_length=255,
         verbose_name="公司名")
-    city = models.ForeignKey(Cities, verbose_name="城市")
-    location = models.CharField(max_length=255, verbose_name="地址")
-    industries = models.ManyToManyField(Industries, verbose_name="行业")
+    co_id = models.CharField(
+        unique=True,
+        db_index=True,
+        default=None,
+        max_length=255,
+        verbose_name="公司代码")
+    quality = models.CharField(max_length=255,blank=True,null=True, verbose_name="性质")
+    size = models.CharField(max_length=255, blank=True,null=True,verbose_name="规模")
+    url = models.CharField(max_length=255, blank=True,null=True,verbose_name="url")
+    note_city = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_城市")
+    note_industry = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_行业")
+    location = models.CharField(max_length=255, blank=True,null=True,verbose_name="地址")
+    img_url = models.CharField(max_length=255, blank=True,null=True,verbose_name="头像链接")
+    industries = models.ManyToManyField(Industries, blank=True,null=True,verbose_name="行业")
+    city = models.ForeignKey(Cities, blank=True,null=True,verbose_name="城市")
 
     def __str__(self):
         return self.name
