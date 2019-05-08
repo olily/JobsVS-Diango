@@ -46,10 +46,6 @@ class Jobs(models.Model):
         verbose_name="岗位名")
     city = models.ForeignKey(Cities, verbose_name="城市")  # 公司城市有可能和岗位城市不一样
     company = models.ForeignKey(Companies, verbose_name="公司",blank=True,null=True)
-    note_co = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_企业")
-    note_city = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_城市")
-    note_func = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_职能")
-    note_education = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_学历")
     jobfunction = models.ManyToManyField(JobFunctions, verbose_name="职能",default=None)
     job_id = models.IntegerField(unique=True,verbose_name="工作id")  # 用来构造url
     head_count = models.IntegerField(default=0, verbose_name="招聘人数")

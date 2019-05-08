@@ -52,15 +52,34 @@ class Companies(models.Model):
         default=None,
         max_length=255,
         verbose_name="公司代码")
-    quality = models.CharField(max_length=255,blank=True,null=True, verbose_name="性质")
-    size = models.CharField(max_length=255, blank=True,null=True,verbose_name="规模")
-    url = models.CharField(max_length=255, blank=True,null=True,verbose_name="url")
-    note_city = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_城市")
-    note_industry = models.CharField(max_length=255, blank=True,null=True,verbose_name="备注_行业")
-    location = models.CharField(max_length=255, blank=True,null=True,verbose_name="地址")
-    img_url = models.CharField(max_length=255, blank=True,null=True,verbose_name="头像链接")
-    industries = models.ManyToManyField(Industries, blank=True,null=True,verbose_name="行业")
-    city = models.ForeignKey(Cities, blank=True,null=True,verbose_name="城市")
+    quality = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="性质")
+    size = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="规模")
+    url = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="url")
+    location = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="地址")
+    img_url = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="头像链接")
+    industries = models.ManyToManyField(
+        Industries, blank=True, verbose_name="行业")
+    city = models.ForeignKey(Cities, blank=True, null=True, verbose_name="城市")
 
     def __str__(self):
         return self.name

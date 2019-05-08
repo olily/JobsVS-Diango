@@ -9,8 +9,8 @@ class BaseSetting(object):
 
 
 class GlobalSettings(object):
-    site_title = "OnlineJudge"
-    site_footer = "957824770@qq.com"
+    site_title = "JobsVS"
+    site_footer = "1135569701@qq.com"
 
 
 class UserProfileAdmin(object):
