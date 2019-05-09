@@ -40,7 +40,7 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         verbose_name="学校")
-    education = models.ForeignKey(Education, verbose_name="学历")
+    education = models.ForeignKey(Education, null=True, verbose_name="学历")
     sex = models.IntegerField(default=0, verbose_name="性别")  # 0保密 1男 2女
 
     class Meta:

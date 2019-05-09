@@ -16,6 +16,8 @@ from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from apps.users.filters import UsersFilter, UserProfileFilter
 from apps.users.models import UserProfile
+from apps.education.models import Education
+
 User = get_user_model()
 
 
@@ -47,7 +49,7 @@ class CustomBackend(ModelBackend):
             # django的后台中密码加密：所以不能password==password
             # UserProfile继承的AbstractUser中有def check_password(self,
             # raw_password):
-            if user.check_password(password):
+            if user.password == password:
                 return user
         except Exception as e:
             return None
@@ -63,7 +65,7 @@ class UserRegViewSet(CreateModelMixin, viewsets.GenericViewSet):
         serializer.is_valid(raise_exception=True)
         user = self.perform_create(serializer)
         obj, created = UserProfile.objects.get_or_create(user=user)
-        obj.ranking = UserProfile.objects.count()
+        obj.education = Education.objects.get(level=0)
         obj.save()
         re_dict = serializer.data
         payload = jwt_payload_handler(user)
