@@ -1,7 +1,7 @@
 from rest_framework.validators import UniqueValidator
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from apps.users.models import UserProfile
+from apps.users.models import UserProfile, UserWantJob
 User = get_user_model()
 
 
@@ -19,13 +19,18 @@ class UserSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
         slug_field='id', read_only=True)
-    username = serializers.SerializerMethodField()
-
-    def get_username(self, obj):
-        return obj.user.username
 
     class Meta:
         model = UserProfile
+        fields = "__all__"
+
+
+class UserWantJobSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(
+        slug_field='id', read_only=True)
+
+    class Meta:
+        model = UserWantJob
         fields = "__all__"
 
 

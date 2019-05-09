@@ -39,6 +39,41 @@ class Industries(models.Model):
         db_table = "industries"
 
 
+class CompanyQuality(models.Model):
+    name = models.CharField(
+        db_index=True,
+        blank=True,
+        null=True,
+        max_length=255,
+        verbose_name="公司性质")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "公司性质"
+        verbose_name_plural = verbose_name
+        db_table = "companyquality"
+
+
+class CompanySize(models.Model):
+    name = models.CharField(
+        db_index=True,
+        blank=True,
+        null=True,
+        max_length=255,
+        verbose_name="公司规模")
+    level = models.IntegerField(default=0, verbose_name="等级")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "公司规模"
+        verbose_name_plural = verbose_name
+        db_table = "companysize"
+
+
 class Companies(models.Model):
     name = models.CharField(
         db_index=True,
@@ -52,16 +87,13 @@ class Companies(models.Model):
         default=None,
         max_length=255,
         verbose_name="公司代码")
-    quality = models.CharField(
-        max_length=255,
-        blank=True,
+    quality = models.ForeignKey(
+        CompanyQuality,
+        default=None,
         null=True,
-        verbose_name="性质")
-    size = models.CharField(
-        max_length=255,
         blank=True,
-        null=True,
-        verbose_name="规模")
+        verbose_name="公司性质")
+    size = models.ForeignKey(CompanySize,null=True,blank=True, default=None, verbose_name="公司规模")
     url = models.CharField(
         max_length=255,
         blank=True,

@@ -144,10 +144,15 @@ province_city = {
 #     print(sql)
 
 # 反转字典
+i=0
 city_provinces = {}
 for province in province_city:
     for city in province_city[province]:
         city_provinces[city] = province
+        i+=1
+
+print(i)
+exit()
 
 with open('data/province_city.pkl','wb+') as f:
     pickle.dump(province_city, f)
@@ -168,13 +173,16 @@ home = 'http://www.51job.com/'
 # url_pre = 'https://jobs.51job.com/'
 
 # 移动端前缀
-url_pre = 'https://m.51job.com/jobs/'
+# url_pre = 'https://m.51job.com/jobs/'
+url_pre = 'https://www.51job.com/sitemap/area_Navigate.php'
 
 get_cityname(home, headers)
+
+
 construct_url(url_pre,'city_info')
 
-for row in cityAndurl.iterrows():
-    insertDB(row)
+# for row in cityAndurl.iterrows():
+#     insertDB(row)
 
 db.close()
 

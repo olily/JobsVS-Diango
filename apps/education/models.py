@@ -4,18 +4,6 @@ from django.db import models
 
 
 class Education(models.Model):
-    grade = (
-        ('none','无要求'),
-        ('primaryschool', "小学"),
-        ('juniorschool', "初中"),
-        ('seniorschool', "高中"),
-        ('technicalsecondaryschool', "中专"),
-        ('juniorcollege', "大专"),
-        ('regularcollege', "本科"),
-        ('postgraduate', "研究生"),
-        ('doctor', "博士")
-    )
-    # education = models.CharField(max_length=32, choices=grade)
     # 初始无学历，依次上升，判断的时候level大于等于某个数字
     level = models.IntegerField(default=0, verbose_name="等级")
     name = models.CharField(

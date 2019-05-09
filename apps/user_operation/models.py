@@ -39,37 +39,3 @@ class UserFocusCompany(models.Model):
         verbose_name_plural = verbose_name
         unique_together = ("user", "company")
         db_table = "user_focus_company"
-
-
-class UserFocusIndustry(models.Model):
-    user = models.ForeignKey(User, verbose_name="用户")
-    industry = models.ForeignKey(Industries, verbose_name="行业")
-    create_time = models.DateTimeField(
-        default=datetime.now, verbose_name="添加时间")
-
-    def __str__(self):
-        return self.user.username
-
-    class Meta:
-        ordering = ['-create_time']
-        verbose_name = "用户关注行业"
-        verbose_name_plural = verbose_name
-        unique_together = ("user", "industry")
-        db_table = "user_focus_industry"
-
-
-class UserFocusJobFunction(models.Model):
-    user = models.ForeignKey(User, verbose_name="用户")
-    jobfunction = models.ForeignKey(JobFunctions, verbose_name="行业")
-    create_time = models.DateTimeField(
-        default=datetime.now, verbose_name="添加时间")
-
-    def __str__(self):
-        return self.user.username
-
-    class Meta:
-        ordering = ['-create_time']
-        verbose_name = "用户关注职能"
-        verbose_name_plural = verbose_name
-        unique_together = ("user", "jobfunction")
-        db_table = "user_focus_jobfunction"

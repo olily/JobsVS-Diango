@@ -20,12 +20,12 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_jwt.views import obtain_jwt_token
 from django.conf import settings
 from django.conf.urls.static import static
-from apps.users.views import UserRegViewSet, UserViewSet, UserProfileListViewSet
+from apps.users.views import UserRegViewSet, UserViewSet, UserProfileListViewSet, UserWantJobListViewSet
 from apps.education.views import EducationViewSet
-from apps.company.views import CompaniesViewSet, IndustriesViewSet
+from apps.company.views import CompaniesViewSet, CompanySizeViewSet, CompanyQualityViewSet, IndustriesViewSet
 from apps.city.views import CitiesViewSet, ProvincesViewSet
 from apps.job.views import JobsViewSet, JobFunctionsViewSet
-from apps.user_operation.views import UserCollectJobViewSet, UserFocusCompanyViewSet, UserFocusIndustryViewSet, UserFocusIndustryViewSet
+from apps.user_operation.views import UserCollectJobViewSet, UserFocusCompanyViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet, base_name="users")
 router.register(r'register', UserRegViewSet, base_name="register")
@@ -34,6 +34,10 @@ router.register(
     UserProfileListViewSet,
     base_name="userprofile")
 router.register(
+    r'userwantjob',
+    UserWantJobListViewSet,
+    base_name="userwantjob")
+router.register(
     r'education',
     EducationViewSet,
     base_name="education")
@@ -41,6 +45,14 @@ router.register(
     r'company',
     CompaniesViewSet,
     base_name="company")
+router.register(
+    r'companysize',
+    CompanySizeViewSet,
+    base_name="companysize")
+router.register(
+    r'companyquality',
+    CompanyQualityViewSet,
+    base_name="companyquality")
 router.register(
     r'industry',
     IndustriesViewSet,
@@ -69,14 +81,6 @@ router.register(
     r'userfocuscompany',
     UserFocusCompanyViewSet,
     base_name="userfocuscompany")
-router.register(
-    r'userfocusindustry',
-    UserFocusIndustryViewSet,
-    base_name="userfocusindustry")
-router.register(
-    r'userfocusjob',
-    UserFocusIndustryViewSet,
-    base_name="userfocusjob")
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),

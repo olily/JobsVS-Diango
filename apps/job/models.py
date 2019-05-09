@@ -12,7 +12,7 @@ class JobFunctions(models.Model):
         max_length=255,
         verbose_name="职能")
     fun_id = models.CharField(
-        default = None,
+        default=None,
         db_index=True,
         max_length=255,
         verbose_name="职能代码")
@@ -45,15 +45,27 @@ class Jobs(models.Model):
         max_length=255,
         verbose_name="岗位名")
     city = models.ForeignKey(Cities, verbose_name="城市")  # 公司城市有可能和岗位城市不一样
-    company = models.ForeignKey(Companies, verbose_name="公司",blank=True,null=True)
-    jobfunction = models.ManyToManyField(JobFunctions, verbose_name="职能",default=None)
-    job_id = models.IntegerField(unique=True,verbose_name="工作id")  # 用来构造url
+    company = models.ForeignKey(
+        Companies,
+        verbose_name="公司",
+        blank=True,
+        null=True)
+    jobfunction = models.ManyToManyField(
+        JobFunctions, verbose_name="职能", blank=True, null=True, default=None)
+    job_id = models.IntegerField(unique=True, verbose_name="工作id")  # 用来构造url
     head_count = models.IntegerField(default=0, verbose_name="招聘人数")
-    put_time = models.DateField(verbose_name="发布时间",blank=True,null=True,)
-    salary_low = models.IntegerField(verbose_name="工资_低",blank=True,null=True,)
-    salary_high = models.IntegerField(verbose_name="工资_高",blank=True,null=True,)
-    work_year = models.CharField(max_length=255,verbose_name="工作经验",blank=True,null=True,)
-    education = models.ForeignKey(Education, verbose_name="学历")
+    put_time = models.DateField(verbose_name="发布时间", blank=True, null=True, default=None)
+    salary_low = models.IntegerField(
+        verbose_name="工资_低", blank=True, null=True)
+    salary_high = models.IntegerField(
+        verbose_name="工资_高", blank=True, null=True)
+    work_year = models.IntegerField(
+        verbose_name="工作经验",
+        blank=True,
+        null=True,
+        default=0)
+    education = models.ForeignKey(Education, blank=True,
+                                  null=True, verbose_name="学历")
     work_addr = models.CharField(max_length=255, verbose_name="工作地点")
     jobReqAndRes = models.CharField(max_length=255, verbose_name="岗位要求和职责")
     jobfare = models.CharField(max_length=255, verbose_name="工作福利")

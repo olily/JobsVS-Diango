@@ -1,7 +1,7 @@
 from django_filters import rest_framework
 import django_filters
 from django.contrib.auth import get_user_model
-from apps.users.models import UserProfile
+from apps.users.models import UserProfile, UserWantJob
 User = get_user_model()
 
 
@@ -15,6 +15,14 @@ class UsersFilter(rest_framework.FilterSet):
 
 
 class UserProfileFilter(rest_framework.FilterSet):
+    user__username = django_filters.CharFilter(lookup_expr="icontains")
+
+    class Meta:
+        model = UserProfile
+        fields = ['user', 'user__username']
+
+
+class UserWantJobFilter(rest_framework.FilterSet):
     user__username = django_filters.CharFilter(lookup_expr="icontains")
 
     class Meta:

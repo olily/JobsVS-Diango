@@ -20,7 +20,7 @@ class Provinces(models.Model):
 
 
 class Cities(models.Model):
-    province = models.ForeignKey(Provinces, verbose_name="省份")
+    province = models.ForeignKey(Provinces, default=None, verbose_name="省份")
     name = models.CharField(
         unique=True,
         db_index=True,

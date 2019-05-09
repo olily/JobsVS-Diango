@@ -3,9 +3,9 @@ from rest_framework import viewsets
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import UserCollectJob, UserFocusCompany, UserFocusIndustry, UserFocusJobFunction
-from .filters import UserCollectJobFilter, UserFocusCompanyFilter, UserFocusIndustryFilter, UserFocusJobFunctionFilter
-from .serializers import UserCollectJobSerializer, UserFocusCompanySerializer, UserFocusIndustrySerializer, UserFocusJobFunctionSerializer
+from .models import UserCollectJob, UserFocusCompany
+from .filters import UserCollectJobFilter, UserFocusCompanyFilter
+from .serializers import UserCollectJobSerializer, UserFocusCompanySerializer
 
 # Create your views here.
 
@@ -34,29 +34,3 @@ class UserFocusCompanyViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = UserFocusCompanyFilter
-
-
-class UserFocusIndustryViewSet(mixins.ListModelMixin,
-                               mixins.UpdateModelMixin,
-                               viewsets.GenericViewSet):
-    queryset = UserFocusIndustry.objects.all()
-    serializer_class = UserFocusIndustrySerializer
-    filter_backends = (
-        DjangoFilterBackend,
-        filters.SearchFilter,
-        filters.OrderingFilter
-    )
-    filter_class = UserFocusIndustryFilter
-
-
-class UserFocusJobFunctionViewSet(mixins.ListModelMixin,
-                                  mixins.UpdateModelMixin,
-                                  viewsets.GenericViewSet):
-    queryset = UserFocusJobFunction.objects.all()
-    serializer_class = UserFocusJobFunctionSerializer
-    filter_backends = (
-        DjangoFilterBackend,
-        filters.SearchFilter,
-        filters.OrderingFilter
-    )
-    filter_class = UserFocusJobFunctionFilter

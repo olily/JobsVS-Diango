@@ -120,21 +120,25 @@ def spider_page(submission):
 
         co_quality_span = item.find(attrs={'class': 's2'})
         if co_quality_span is not None:
-            co_quality = co_quality_span.text
+            co_quality_src = co_quality_span.text
+            co_quality = companyqualityDict[co_quality_src]
+
 
         co_size_span = item.find(attrs={'class': 's3'})
         if co_size_span is not None:
-            co_size = co_size_span.text
+            co_size_src = co_size_span.text
+            co_size = companysizeDict[co_size_src]
 
         city_span = item.find(attrs={'class': 's4'})
         if city_span is not None:
-            city = city_span.text
+            city_src = city_span.text
+            city = cityandidDict[city_src]
 
         industry_span = item.find(attrs={'class': 's5'})
         if industry_span is not None:
             industry = industry_span.text
 
-        co_row = [co_id,co_name,co_quality,co_size,city,industry,co_url]
+        co_row = [co_id,co_name,co_quality,co_size,city,co_url]
 
         mylock.acquire()
         num += 1
@@ -150,7 +154,7 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into companies(co_id,name,quality,size,note_city,note_industry,url) values("%s","%s", "%s","%s", "%s","%s", "%s")' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),str(sql_value[6]))
+    sql = 'insert into companies(co_id,name,quality_id,size_id,city_id,url) values("%s","%s",%d,%d,%d,"%s")' % (str(sql_value[0]), str(sql_value[1]),sql_value[2], sql_value[3],sql_value[4], str(sql_value[5]))
     # SQL 插入语句
     try:
         mylock2.acquire()
@@ -194,6 +198,70 @@ user_agent_list = [
 db = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
+
+sql1 = 'select id,name from cities'
+cursor.execute(sql1)
+
+cityandidDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    cityandidDict[item[1]]=item[0]
+print(cityandidDict)
+
+sql2 = 'select id,name from industries'
+cursor.execute(sql2)
+
+industryandidDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    industryandidDict[item[1]]=item[0]
+print(industryandidDict)
+
+sql3 = 'select id,name from companyquality'
+cursor.execute(sql3)
+
+companyqualityDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    companyqualityDict[item[1]]=item[0]
+print(companyqualityDict)
+
+sql3 = 'select id,name from companysize'
+cursor.execute(sql3)
+
+companysizeDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    companysizeDict[item[1]]=item[0]
+print(companysizeDict)
+
+sql3 = 'select id,name from education'
+cursor.execute(sql3)
+
+educationDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    educationDict[item[1]]=item[0]
+print(educationDict)
+
+sql1 = 'select id,name from jobfunction'
+cursor.execute(sql1)
+
+jonfuncationDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    jonfuncationDict[item[1]]=item[0]
+print(jonfuncationDict)
+
+sql1 = 'select id,name from education'
+cursor.execute(sql1)
+
+educationDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    educationDict[item[1]]=item[0]
+print(educationDict)
+
 # 每次获取新数据前清空表
 cursor.execute('SET foreign_key_checks = 0')
 cursor.execute('truncate table companies')
