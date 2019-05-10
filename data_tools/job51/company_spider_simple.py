@@ -155,7 +155,7 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into companies(co_id,name,quality,size,city,url) values("%s","%s","%s","%s","%s","%s")' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]))
+    sql = 'insert into companies(co_id,name,quality,size,city,url,quality_id,size_id,city_id) values("%s","%s","%s","%s","%s","%s",%d,%d,%d)' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),12,8,380)
     # SQL 插入语句
     try:
         mylock2.acquire()
@@ -163,7 +163,6 @@ def insertDB(sql_value):
         print(save_num)
         # print(sql)
         cursor.execute(sql)
-        # print(sql)
         if save_num % 1000 == 0:
             db.commit()
             if save_num % 10000==0:
@@ -200,74 +199,10 @@ db = pymysql.connect("localhost", "root", "123456", "jobs51", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
 
-#
-# sql1 = 'select id,name from cities'
-# cursor.execute(sql1)
-#
-# cityandidDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     cityandidDict[item[1]]=item[0]
-# print(cityandidDict)
-#
-# sql2 = 'select id,name from industries'
-# cursor.execute(sql2)
-#
-# industryandidDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     industryandidDict[item[1]]=item[0]
-# print(industryandidDict)
-#
-# sql3 = 'select id,name from companyquality'
-# cursor.execute(sql3)
-#
-# companyqualityDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     companyqualityDict[item[1]]=item[0]
-# print(companyqualityDict)
-#
-# sql3 = 'select id,name from companysize'
-# cursor.execute(sql3)
-#
-# companysizeDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     companysizeDict[item[1]]=item[0]
-# print(companysizeDict)
-#
-# sql3 = 'select id,name from education'
-# cursor.execute(sql3)
-#
-# educationDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     educationDict[item[1]]=item[0]
-# print(educationDict)
-#
-# sql1 = 'select id,name from jobfunction'
-# cursor.execute(sql1)
-#
-# jonfuncationDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     jonfuncationDict[item[1]]=item[0]
-# print(jonfuncationDict)
-#
-# sql1 = 'select id,name from education'
-# cursor.execute(sql1)
-#
-# educationDict = {}
-# cityandid = cursor.fetchall()
-# for item in cityandid:
-#     educationDict[item[1]]=item[0]
-# print(educationDict)
-
-# 每次获取新数据前清空表
-cursor.execute('SET foreign_key_checks = 0')
-cursor.execute('truncate table companies')
-cursor.execute('SET foreign_key_checks = 1')
+# 清空数据表
+# cursor.execute('SET foreign_key_checks = 0')
+# cursor.execute('truncate table companies')
+# cursor.execute('SET foreign_key_checks = 1')
 
 db.commit()
 
@@ -283,7 +218,7 @@ courls_queue = Queue()
 
 pool = MyThreadPool()
 pool.addthread(queue=q, size=maxsize, func=spider_page)
-pool.addthread(queue=courls_queue, size=5, func=insertDB)
+pool.addthread(queue=courls_queue, size=1, func=insertDB)
 pool.startAll()
 pool.joinAll()
 

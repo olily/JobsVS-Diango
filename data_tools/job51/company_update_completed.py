@@ -91,7 +91,7 @@ def cursor_query(user_agent_list):
     query_num = 0
     # 首先查询全量数据
     sscursor = pymysql.cursors.SSCursor(db)
-    sscursor.execute('select id,url from companies')
+    sscursor.execute('select id,url from companies_copy4')
     while True:
         # 每次获取时会从上次游标的位置开始移动size个位置，返回size条数据
         data = sscursor.fetchone()
@@ -140,11 +140,22 @@ def get_job_detail(items):
         location = location_div.text
     # print(location)
 
+    industry_div = job_html.find(attrs={'class': 'ltype'})
+    industry = None
+    industries = industry_div.findAll('a')
+    if industries is not None:
+        industry_src=""
+        for item in industries:
+            industry_src+=item.text+"_"
+        industry = industry_src[:-1]
+
+
+
 
     global num
     num += 1
     update_row = [
-        img_url,location,co_id]
+        img_url,location,industry,co_id]
     mylock.acquire()
     Producer.producer(jobs_queue,update_row)
     mylock.release()
@@ -157,7 +168,7 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'update companies set img_url="%s",location="%s" where id=%d'%(sql_value[0],sql_value[1],sql_value[2])
+    sql = 'update companies_copy4 set img_url="%s",location="%s",industry="%s" where id=%d' % (str(sql_value[0]),str(sql_value[1]),str(sql_value[2]),sql_value[3])
     # SQL 插入语句
     try:
         mylock2.acquire()
@@ -165,10 +176,11 @@ def insertDB(sql_value):
         cursor.execute(sql)
         print(save_num)
         # print(sql)
-        if save_num % 100 == 0:
-            db.commit()
-            if save_num % 10000 == 0:
-                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),"save",save_num)
+        db.commit()
+        # if save_num % 100 == 0:
+        #     db.commit()
+        #     if save_num % 10000 == 0:
+        #         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),"save",save_num)
         mylock2.release()
     except :
         mylock2.release()
@@ -198,7 +210,7 @@ user_agent_list = [
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 # 打开数据库连接
-db = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='utf8')
+db = pymysql.connect("localhost", "root", "123456", "jobs51", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
 
@@ -219,7 +231,7 @@ save_num = 0
 
 pool = MyThreadPool()
 pool.addthread(queue=q, size=18,func=get_job_detail)
-pool.addthread(queue=jobs_queue, size=2,func=insertDB)
+pool.addthread(queue=jobs_queue, size=5,func=insertDB)
 pool.startAll()
 pool.joinAll()
 
