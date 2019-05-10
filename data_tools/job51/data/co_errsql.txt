@@ -1,2 +1,1 @@
-2019-05-10 15:58:16
-insert into companies(co_id,name,quality,size,city,url) values("co3838961","深圳我主良缘信息科技有限公司广州分公司","民营公司","500-1000人","广州","https://jobs.51job.com/all/co3838961.html");
+2019-05-10 18:28:01

@@ -1,4 +1,55 @@
-2019-05-07 21:56:34
+2019-05-10 19:13:03
+update companies_copy4 set img_url="None",location="
+公司地址：苏州中心16楼                                        (邮编：250000)
+                            ",industry="互联网/电子商务_建筑/建材/工程" where id=7;
+update companies_copy4 set img_url="//img03.51jobcdn.com/fansImg/CompLogo/6/5331/5330295/5330295_300.png?636868615872774240",location="
+公司地址：广州市番禺区南村镇南草堂金坑广兴红棉路6号2栋                                        (邮编：000000)
+                            ",industry="互联网/电子商务_贸易/进出口" where id=11;
 update companies set img_url="None",location="
-公司地址：金水区花园路丰产路兰德中心5楼                                        (邮编：450000)
-                            " where id=3;
+公司地址：云南省·昆明市·五华区·龙泉路实力壹方城13栋1单元2001-2003室 "                                        (邮编：650000)
+                            ",industry="教育/培训/院校" where id=18640;
+update companies_copy4 set img_url="None",location="
+公司地址：云南省·昆明市·五华区·龙泉路实力壹方城13栋1单元2001-2003室 "                                        (邮编：650000)
+                            ",industry="教育/培训/院校" where id=18640;
+update companies set img_url="None",location="
+公司地址：科技路与高新四路十字西北角"高新大都荟"                                        (邮编：710001)
+                            ",industry="物业管理/商业中心" where id=60727;
+update companies set img_url="//img03.51jobcdn.com/fansImg/CompLogo/5/4119/4118291/4118291_120.gif?636288866842166111",location="
+公司地址：深圳市宝安区福永街道岭北六路21号（附近公交站台：301总站-公交车站 、中国石化(凤凰加油站) 、稔田社区），可导航"富春晖科技园"                                        (邮编：518103)
+                            ",industry="机械/设备/重工_通信/电信/网络设备" where id=64788;
+update companies_copy4 set img_url="None",location="
+公司地址：科技路与高新四路十字西北角"高新大都荟"                                        (邮编：710001)
+                            ",industry="物业管理/商业中心" where id=60727;
+update companies_copy4 set img_url="//img03.51jobcdn.com/fansImg/CompLogo/5/4119/4118291/4118291_120.gif?636288866842166111",location="
+公司地址：深圳市宝安区福永街道岭北六路21号（附近公交站台：301总站-公交车站 、中国石化(凤凰加油站) 、稔田社区），可导航"富春晖科技园"                                        (邮编：518103)
+                            ",industry="机械/设备/重工_通信/电信/网络设备" where id=64788;
+update companies set img_url="None",location="
+公司地址：广州市白云区太和镇和龙村一环路66号。地铁路线：到龙归地铁站B1出口转乘728或758到太和中路站下，后转乘973到胡屋站下，往回走100米即到天湘板业或者导航"天湘板业”                                        (邮编：510540)
+                            ",industry="家具/家电/玩具/礼品" where id=88137;
+update companies_copy4 set img_url="None",location="
+公司地址：广州市白云区太和镇和龙村一环路66号。地铁路线：到龙归地铁站B1出口转乘728或758到太和中路站下，后转乘973到胡屋站下，往回走100米即到天湘板业或者导航"天湘板业”                                        (邮编：510540)
+                            ",industry="家具/家电/玩具/礼品" where id=88137;
+update companies set img_url="None",location="
+公司地址：1、龙华区三联路弓村"汇海广场"A座2308。2、龙华区和平东路182号“尚美中心”403A                                        (邮编：518000)
+                            ",industry="互联网/电子商务" where id=120684;
+update companies_copy4 set img_url="None",location="
+公司地址：1、龙华区三联路弓村"汇海广场"A座2308。2、龙华区和平东路182号“尚美中心”403A                                        (邮编：518000)
+                            ",industry="互联网/电子商务" where id=120684;
+update companies set img_url="None",location="
+公司地址："重庆市渝北区回兴街 道宝环四路100号"                                        (邮编：401120)
+                            ",industry="互联网/电子商务" where id=147808;
+update companies set img_url="None",location="
+公司地址：广州市天河区黄埔大道西55号恒城大厦A座1603室(地铁"体育西路"站G出口附近)。                                        (邮编：510630)
+                            ",industry="专业服务(咨询、人力资源、财会)" where id=155229;
+update companies_copy4 set img_url="None",location="
+公司地址："重庆市渝北区回兴街 道宝环四路100号"                                        (邮编：401120)
+                            ",industry="互联网/电子商务" where id=147808;
+update companies_copy4 set img_url="None",location="
+公司地址：广州市天河区黄埔大道西55号恒城大厦A座1603室(地铁"体育西路"站G出口附近)。                                        (邮编：510630)
+                            ",industry="专业服务(咨询、人力资源、财会)" where id=155229;
+update companies set img_url="None",location="
+公司地址：沈阳市和平区砂阳路158-1号丰泽花园东门"正午文化noon"                                        (邮编：110002)
+                            ",industry="影视/媒体/艺术/文化传播_餐饮业" where id=188124;
+update companies_copy4 set img_url="None",location="
+公司地址：沈阳市和平区砂阳路158-1号丰泽花园东门"正午文化noon"                                        (邮编：110002)
+                            ",industry="影视/媒体/艺术/文化传播_餐饮业" where id=188124;

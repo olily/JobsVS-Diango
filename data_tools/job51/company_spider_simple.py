@@ -155,7 +155,7 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into companies(co_id,name,quality,size,city,url,quality_id,size_id,city_id) values("%s","%s","%s","%s","%s","%s",%d,%d,%d)' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),12,8,380)
+    sql = 'insert into companies(co_id,name,quality,size,city,url,quality_id,size_id,city_id) values("%s","%s","%s","%s","%s","%s",%d,%d,%d)' % (str(sql_value[0]), str(sql_value[1]),str(sql_value[2]), str(sql_value[3]),str(sql_value[4]), str(sql_value[5]),1,1,1)
     # SQL 插入语句
     try:
         mylock2.acquire()

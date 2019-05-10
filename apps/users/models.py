@@ -59,10 +59,15 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         verbose_name="学校")
-    education = models.ForeignKey(Education, null=True, verbose_name="学历")
+    education = models.ForeignKey(Education, null=True, blank=True,verbose_name="学历")
     sex = models.IntegerField(default=0, verbose_name="性别")  # 0保密 1男 2女
     birthday = models.DateField(null=True, blank=True, verbose_name="生日")
-    city = models.ForeignKey(Cities, default=None, verbose_name="现居城市")
+    city = models.ForeignKey(
+        Cities,
+        null=True,
+        blank=True,
+        default=None,
+        verbose_name="现居城市")
 
     class Meta:
         verbose_name = "个人信息"

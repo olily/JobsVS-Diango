@@ -26,5 +26,5 @@ class UserWantJobFilter(rest_framework.FilterSet):
     user__username = django_filters.CharFilter(lookup_expr="icontains")
 
     class Meta:
-        model = UserProfile
+        model = UserWantJob
         fields = ['user', 'user__username']

@@ -15,8 +15,11 @@ from rest_framework_extensions.cache.mixins import CacheResponseMixin
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from apps.users.filters import UsersFilter, UserProfileFilter, UserWantJobFilter
-from apps.users.models import UserProfile, UserWantJob
+from apps.users.models import UserProfile, UserWantJob, WorkYear
 from apps.education.models import Education
+from apps.city.models import Cities
+from apps.company.models import Industries, CompanySize
+from apps.job.models import JobFunctions
 
 User = get_user_model()
 
@@ -65,9 +68,16 @@ class UserRegViewSet(CreateModelMixin, viewsets.GenericViewSet):
         serializer.is_valid(raise_exception=True)
         user = self.perform_create(serializer)
         obj, created = UserProfile.objects.get_or_create(user=user)
-        obj.education = Education.objects.get(level=0)
+        obj.education = Education.objects.get(pk=1)
+        obj.city = Cities.objects.get(pk=1)
         obj.save()
         obj, created = UserWantJob.objects.get_or_create(user=user)
+        obj.want_education = Education.objects.get(pk=1)
+        obj.want_workyear = WorkYear.objects.get(pk=1)
+        obj.want_city = Cities.objects.get(pk=1)
+        obj.want_industry = Industries.objects.get(pk=2)
+        obj.want_jobfunction = JobFunctions.objects.get(pk=2)
+        obj.want_companysize = CompanySize.objects.get(pk=1)
         obj.save()
         re_dict = serializer.data
         payload = jwt_payload_handler(user)

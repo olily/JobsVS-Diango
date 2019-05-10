@@ -15,6 +15,8 @@ class JobFunctions(models.Model):
         default=None,
         db_index=True,
         max_length=255,
+        null=True,
+        blank=True,
         verbose_name="职能代码")
     category = models.ForeignKey(
         "self",
@@ -51,7 +53,7 @@ class Jobs(models.Model):
         blank=True,
         null=True)
     jobfunction = models.ManyToManyField(
-        JobFunctions, verbose_name="职能", blank=True, null=True, default=None)
+        JobFunctions, verbose_name="职能", blank=True, default=None)
     job_id = models.IntegerField(unique=True, verbose_name="工作id")  # 用来构造url
     head_count = models.IntegerField(default=0, verbose_name="招聘人数")
     put_time = models.DateField(verbose_name="发布时间", blank=True, null=True, default=None)

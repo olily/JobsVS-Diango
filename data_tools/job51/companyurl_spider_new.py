@@ -24,85 +24,93 @@ for item in cityandid:
     cityandidDict[item[1]]=item[0]
 # print(cityandidDict)
 
-sql2 = 'select id,name from industries'
-cursor1.execute(sql2)
+# sql2 = 'select id,name from industries'
+# cursor1.execute(sql2)
+#
+# industryandidDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     industryandidDict[item[1]]=item[0]
+# # print(industryandidDict)
+#
+# sql3 = 'select id,name from companyquality'
+# cursor1.execute(sql3)
+#
+# companyqualityDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     companyqualityDict[item[1]]=item[0]
+# # print(companyqualityDict)
+#
+# sql3 = 'select id,name from companysize'
+# cursor1.execute(sql3)
+#
+# companysizeDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     companysizeDict[item[1]]=item[0]
+# # print(companysizeDict)
+#
+# sql3 = 'select id,name from education'
+# cursor1.execute(sql3)
+#
+# educationDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     educationDict[item[1]]=item[0]
+# # print(educationDict)
+#
+# sql1 = 'select id,name from jobfunction'
+# cursor1.execute(sql1)
+#
+# jonfuncationDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     jonfuncationDict[item[1]]=item[0]
+# # print(jonfuncationDict)
+#
+# sql1 = 'select id,name from education'
+# cursor1.execute(sql1)
+#
+# educationDict = {}
+# cityandid = cursor1.fetchall()
+# for item in cityandid:
+#     educationDict[item[1]]=item[0]
+# # print(educationDict)
 
-industryandidDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    industryandidDict[item[1]]=item[0]
-# print(industryandidDict)
-
-sql3 = 'select id,name from companyquality'
-cursor1.execute(sql3)
-
-companyqualityDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    companyqualityDict[item[1]]=item[0]
-# print(companyqualityDict)
-
-sql3 = 'select id,name from companysize'
-cursor1.execute(sql3)
-
-companysizeDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    companysizeDict[item[1]]=item[0]
-# print(companysizeDict)
-
-sql3 = 'select id,name from education'
-cursor1.execute(sql3)
-
-educationDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    educationDict[item[1]]=item[0]
-# print(educationDict)
-
-sql1 = 'select id,name from jobfunction'
-cursor1.execute(sql1)
-
-jonfuncationDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    jonfuncationDict[item[1]]=item[0]
-# print(jonfuncationDict)
-
-sql1 = 'select id,name from education'
-cursor1.execute(sql1)
-
-educationDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    educationDict[item[1]]=item[0]
-# print(educationDict)
+# sql = 'update companies_copy5 set quality_id = 1,size_id=1,city_id = 1'
+# # print(sql)
+# cursor.execute(sql)
+# db.commit()
 
 # for items in companyqualityDict:
 #     # print(items)
-#     sql = 'update companies_copy3 set quality_id = %d where quality = "%s"' %(int(companyqualityDict[items]),items)
+#     sql = 'update companies_copy5 set quality_id = %d where quality = "%s"' %(int(companyqualityDict[items]),items)
 #     # print(sql)
 #     cursor.execute(sql)
 #     db.commit()
-# for items in cityandidDict:
-#     # print(items)
-#     sql = 'update companies_copy3 set city_id = %d where city = "%s"' %(int(cityandidDict[items]),items)
-#     # print(sql)
-#     cursor.execute(sql)
-#     db.commit()
-# #
+#
 # for items in companysizeDict:
 #     # print(items)
-#     sql = 'update companies_copy3 set size_id = %d where size = "%s"' %(int(companysizeDict[items]),items)
+#     sql = 'update companies_copy5 set size_id = %d where size = "%s"' %(int(companysizeDict[items]),items)
 #     # print(sql)
 #     cursor.execute(sql)
 #     db.commit()
-# #
+#
 
+for items in cityandidDict:
+    print(items,cityandidDict[items])
+    sql = 'update companies_copy5 set city_id = %d where city = "%s"' %(int(cityandidDict[items]),items)
+    # print(sql)
+    cursor.execute(sql)
+    db.commit()
+#
+
+#
 # cursor.execute('SET foreign_key_checks = 0')
 # cursor.execute('truncate table companyindustry')
 # cursor.execute('SET foreign_key_checks = 1')
-# sql = 'select id,industry from companies_copy3'
+# sql = 'select id,industry from companies_copy5'
 # cursor.execute(sql)
 # co_indus_data = cursor.fetchall()
 # i=0
@@ -119,12 +127,12 @@ for item in cityandid:
 #                 print(i)
 #     db.commit()
 
-for items in industryandidDict:
-    # print(items)
-    sql = 'update companyindustry set industry_id = %d where industry_name = "%s"' %(int(industryandidDict[items]),items)
-    # print(sql)
-    cursor.execute(sql)
-    db.commit()
+# for items in industryandidDict:
+#     # print(items)
+#     sql = 'update companyindustry set industry_id = %d where industry_name = "%s"' %(int(industryandidDict[items]),items)
+#     # print(sql)
+#     cursor.execute(sql)
+#     db.commit()
 
 
 

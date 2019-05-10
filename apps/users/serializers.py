@@ -6,19 +6,31 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
-    isSuperUser = serializers.SerializerMethodField()
-
-    def get_isSuperUser(self, obj):
-        return obj.is_superuser
 
     class Meta:
         model = User
-        fields = ("id", "username", "email", 'isSuperUser')
+        fields = ("id", "username", "email")
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
         slug_field='id', read_only=True)
+    email = serializers.SerializerMethodField()
+    education_name = serializers.SerializerMethodField()
+    province = serializers.SerializerMethodField()
+    city_name = serializers.SerializerMethodField()
+
+    def get_email(self, obj):
+        return obj.user.email
+
+    def get_education_name(self, obj):
+        return obj.education.name
+
+    def get_city_name(self, obj):
+        return obj.city.name
+
+    def get_province(self, obj):
+        return obj.city.province.id
 
     class Meta:
         model = UserProfile
@@ -28,6 +40,18 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class UserWantJobSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
         slug_field='id', read_only=True)
+    industry_parent = serializers.SerializerMethodField()
+    jobfunction_parent = serializers.SerializerMethodField()
+    province = serializers.SerializerMethodField()
+
+    def get_industry_parent(self, obj):
+        return obj.want_industry.category.id
+
+    def get_jobfunction_parent(self, obj):
+        return obj.want_jobfunction.category.id
+
+    def get_province(self, obj):
+        return obj.want_city.province.id
 
     class Meta:
         model = UserWantJob
