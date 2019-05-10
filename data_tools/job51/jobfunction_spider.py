@@ -116,7 +116,7 @@ def spider_page(submission):
         j+=1
     db.commit()
 
-    i=0
+    i=2
     for item in industry_items:
         if item==None or item.a==None:
             continue
@@ -187,6 +187,10 @@ cursor = db.cursor()
 cursor.execute('SET foreign_key_checks = 0')
 cursor.execute('truncate table jobfunction')
 cursor.execute('SET foreign_key_checks = 1')
+sql = 'insert into jobfunction(name,fun_id) values("无","1")'
+cursor.execute(sql)
+sql1 = 'insert into jobfunction(name,category_id,fun_id) values("无",1,"2")'
+cursor.execute(sql1)
 db.commit()
 
 f = open("data/function_errsql.txt", "w+", encoding="utf-8")

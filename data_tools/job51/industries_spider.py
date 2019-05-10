@@ -113,7 +113,7 @@ def spider_page(submission):
         j+=1
     db.commit()
 
-    i=0
+    i=2
     for item in industry_items:
         i += 1
         # 遍历保存行业
@@ -178,6 +178,10 @@ cursor = db.cursor()
 cursor.execute('SET foreign_key_checks = 0')
 cursor.execute('truncate table industries')
 cursor.execute('SET foreign_key_checks = 1')
+sql = 'insert into industries(name,industry_id) values("无","0")'
+cursor.execute(sql)
+sql1 = 'insert into industries(name,category_id,industry_id) values("无",1,"hy0")'
+cursor.execute(sql1)
 db.commit()
 
 f = open("data/industry_errsql.txt", "w+", encoding="utf-8")
