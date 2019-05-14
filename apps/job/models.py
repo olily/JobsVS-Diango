@@ -25,12 +25,6 @@ class JobFunctions(models.Model):
         db_index=True,
         max_length=255,
         verbose_name="职能分类")
-    url = models.CharField(
-        db_index=True,
-        null=True,
-        blank=True,
-        max_length=255,
-        verbose_name="url")
 
     def __str__(self):
         return self.name

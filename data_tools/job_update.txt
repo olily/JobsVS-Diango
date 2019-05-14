@@ -1,0 +1,2 @@
+2019-05-14 21:04:24
+update jobs_get_copy1 set education="高中",work_year="1年经验",jobfare = "五险一金_全勤奖_餐饮补贴_节日福利_专业培训_带薪年假_绩效奖金_包住宿_员工旅游",job_fun = "汽车喷漆" where code="100023009";

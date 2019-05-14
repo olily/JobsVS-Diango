@@ -53,3 +53,15 @@ update companies set img_url="None",location="
 update companies_copy4 set img_url="None",location="
 公司地址：沈阳市和平区砂阳路158-1号丰泽花园东门"正午文化noon"                                        (邮编：110002)
                             ",industry="影视/媒体/艺术/文化传播_餐饮业" where id=188124;
+update companies set img_url="None",location="
+公司地址：龙华区民治街道中华路28号三宝工业区C栋3楼（导航到"正诺达"亦可）                                        (邮编：518000)
+                            ",industry="互联网/电子商务_贸易/进出口" where id=257842;
+update companies_copy4 set img_url="None",location="
+公司地址：龙华区民治街道中华路28号三宝工业区C栋3楼（导航到"正诺达"亦可）                                        (邮编：518000)
+                            ",industry="互联网/电子商务_贸易/进出口" where id=257842;
+update companies set img_url="//img04.51jobcdn.com/fansImg/CompLogo/4/3601/3600743/3600743_120.gif?635821567118550483",location="
+公司地址："合肥市 繁华大道与文山路交叉口 工投立恒工业广场园区内                                        (邮编：230000)
+                            ",industry="检测，认证" where id=292133;
+update companies_copy4 set img_url="//img06.51jobcdn.com/fansImg/CompLogo/4/3601/3600743/3600743_120.gif?635821567118550483",location="
+公司地址："合肥市 繁华大道与文山路交叉口 工投立恒工业广场园区内                                        (邮编：230000)
+                            ",industry="检测，认证" where id=292133;

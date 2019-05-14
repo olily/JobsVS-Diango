@@ -23,12 +23,6 @@ class Industries(models.Model):
         db_index=True,
         max_length=255,
         verbose_name="行业分类")
-    url = models.CharField(
-        db_index=True,
-        null=True,
-        blank=True,
-        max_length=255,
-        verbose_name="url")
 
     def __str__(self):
         return self.name
@@ -93,12 +87,12 @@ class Companies(models.Model):
         null=True,
         blank=True,
         verbose_name="公司性质")
-    size = models.ForeignKey(CompanySize,null=True,blank=True, default=None, verbose_name="公司规模")
-    url = models.CharField(
-        max_length=255,
-        blank=True,
+    size = models.ForeignKey(
+        CompanySize,
         null=True,
-        verbose_name="url")
+        blank=True,
+        default=None,
+        verbose_name="公司规模")
     location = models.CharField(
         max_length=255,
         blank=True,

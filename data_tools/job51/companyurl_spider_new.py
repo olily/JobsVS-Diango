@@ -15,24 +15,24 @@ db1 = pymysql.connect("localhost", "root", "123456", "jobsvs",)
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor1 = db1.cursor()
 
-sql1 = 'select id,name from cities'
-cursor1.execute(sql1)
-
-cityandidDict = {}
-cityandid = cursor1.fetchall()
-for item in cityandid:
-    cityandidDict[item[1]]=item[0]
-# print(cityandidDict)
-
-# sql2 = 'select id,name from industries'
-# cursor1.execute(sql2)
+# sql1 = 'select id,name from cities'
+# cursor1.execute(sql1)
 #
-# industryandidDict = {}
+# cityandidDict = {}
 # cityandid = cursor1.fetchall()
 # for item in cityandid:
-#     industryandidDict[item[1]]=item[0]
-# # print(industryandidDict)
+#     cityandidDict[item[1]]=item[0]
+# # print(cityandidDict)
 #
+sql2 = 'select id,name from industries'
+cursor1.execute(sql2)
+
+industryandidDict = {}
+cityandid = cursor1.fetchall()
+for item in cityandid:
+    industryandidDict[item[1]]=item[0]
+# print(industryandidDict)
+
 # sql3 = 'select id,name from companyquality'
 # cursor1.execute(sql3)
 #
@@ -77,63 +77,73 @@ for item in cityandid:
 # for item in cityandid:
 #     educationDict[item[1]]=item[0]
 # # print(educationDict)
-
-# sql = 'update companies_copy5 set quality_id = 1,size_id=1,city_id = 1'
+#
+# sql = 'update companies set quality_id = 1,size_id=1,city_id = 1'
 # # print(sql)
 # cursor.execute(sql)
 # db.commit()
-
+#
 # for items in companyqualityDict:
 #     # print(items)
-#     sql = 'update companies_copy5 set quality_id = %d where quality = "%s"' %(int(companyqualityDict[items]),items)
+#     sql = 'update companies set quality_id = %d where quality = "%s"' %(int(companyqualityDict[items]),items)
 #     # print(sql)
 #     cursor.execute(sql)
 #     db.commit()
 #
 # for items in companysizeDict:
 #     # print(items)
-#     sql = 'update companies_copy5 set size_id = %d where size = "%s"' %(int(companysizeDict[items]),items)
+#     sql = 'update companies set size_id = %d where size = "%s"' %(int(companysizeDict[items]),items)
+#     # print(sql)
+#     cursor.execute(sql)
+#     db.commit()
+# #
+#
+# for items in cityandidDict:
+#     print(items,cityandidDict[items])
+#     sql = 'update companies  set city_id = %d where city = "%s"' %(int(cityandidDict[items]),items)
 #     # print(sql)
 #     cursor.execute(sql)
 #     db.commit()
 #
 
-for items in cityandidDict:
-    print(items,cityandidDict[items])
-    sql = 'update companies_copy5 set city_id = %d where city = "%s"' %(int(cityandidDict[items]),items)
+#
+cursor.execute('SET foreign_key_checks = 0')
+cursor.execute('truncate table companies_industries_copy1')
+cursor.execute('SET foreign_key_checks = 1')
+
+# init companies_industries
+
+
+
+sql = 'select id,industry from companies_copy6'
+cursor.execute(sql)
+co_indus_data = cursor.fetchall()
+i=0
+for items in co_indus_data:
+    co_id = items[0]
+    if items[1] is not None and items[1] !="":
+        industries = items[1].split('_')
+        for industry in industries:
+            sql = 'insert into companies_industries_copy1(companies_id,industry_name) values(%d,"%s")'% (co_id,industry)
+            # print(sql)
+            i+=1
+            cursor.execute(sql)
+            if i % 1000 == 0:
+                print(i)
+    db.commit()
+
+for items in industryandidDict:
+    # print(items)
+    sql = 'update companies_industries_copy1 set industries_id = %d where industry_name = "%s"' %(int(industryandidDict[items]),items)
     # print(sql)
     cursor.execute(sql)
     db.commit()
-#
 
 #
-# cursor.execute('SET foreign_key_checks = 0')
-# cursor.execute('truncate table companyindustry')
-# cursor.execute('SET foreign_key_checks = 1')
-# sql = 'select id,industry from companies_copy5'
+# sql = 'select id,name,industry from companies_copy6 where  industry = "" or industry is NULL '
 # cursor.execute(sql)
-# co_indus_data = cursor.fetchall()
-# i=0
-# for items in co_indus_data:
-#     co_id = items[0]
-#     if items[1] is not None:
-#         industries = items[1].split('_')
-#         for industry in industries:
-#             sql = 'insert into companyindustry(company_id,industry_name) values(%d,"%s")'% (co_id,industry)
-#             # print(sql)
-#             i+=1
-#             cursor.execute(sql)
-#             if i % 1000 == 0:
-#                 print(i)
-#     db.commit()
-
-# for items in industryandidDict:
-#     # print(items)
-#     sql = 'update companyindustry set industry_id = %d where industry_name = "%s"' %(int(industryandidDict[items]),items)
-#     # print(sql)
-#     cursor.execute(sql)
-#     db.commit()
-
+# for item in cursor.fetchall():
+#     print(item)
 
 
 
