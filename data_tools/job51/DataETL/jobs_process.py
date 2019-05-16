@@ -126,12 +126,19 @@ def processSlary():
             # print(sql, ";")
             db_urllist.commit()
 
+#  职能分解
+def splitFunction():
+    cursor_urllist.execute('select id,jobfunction from jobs_get_copy7')
+
 # 处理职能
 def processFunction():
-    cursor_jobsvs.execute('select * from jobfunction where category_id is not NULL')
+    cursor_jobsvs.execute('select id,name from jobfunction where category_id is not NULL')
+
     list = cursor_jobsvs.fetchall()
     for item in list:
-        
+
+
+
 
 # 构造jobs表
 def construct():
