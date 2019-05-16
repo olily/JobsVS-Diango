@@ -18,7 +18,7 @@ import pymysql
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 url = "https://search.51job.com/list/010000,010000,0000,01,0,99,%2B,2,1.html"
 url_pre = "https://search.51job.com/list/"
-url_middle = ",000000,0000,00,9,99,%2B,2,"
+url_middle = ",000000,0000,00,0,99,%2B,2,"
 url_tail = ".html"
 
 # 设置临界区（资源锁）
@@ -43,7 +43,7 @@ db_jobsvs = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='ut
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor_jobsvs = db_jobsvs.cursor()
 
-salary_dict = {'元/天':1,'千/月':2,'万/月':3,'万/年':4}
+salary_dict = {'元/天':0,'千/月':2,'万/月':3,'万/年':4}
 
 
 
@@ -220,7 +220,7 @@ def insertDB(sql_value):
     db_urllist.ping(reconnect=True)
     # print(11111111111111)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into jobs_get(name,code,company_code,salary_type,salary_low,salary_high,city_id,put_time,url) values("%s", "%s","%s","%s", %d,%d,%d,"%s","%s")' % (sql_value[0], str(sql_value[1]), str(sql_value[2]),str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
+    sql = 'insert into jobs_getinfo(name,code,company_code,salary_type,salary_low,salary_high,city_id,put_time,url,company_id,fun_id,education_id) values("%s", "%s","%s","%s", %d,%d,%d,"%s","%s", 0 ,0,0)' % (sql_value[0], str(sql_value[1]), str(sql_value[2]),str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
     # print(sql)
     # SQL 插入语句
     try:

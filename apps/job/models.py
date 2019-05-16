@@ -48,8 +48,9 @@ class Jobs(models.Model):
         null=True)
     jobfunction = models.ManyToManyField(
         JobFunctions, verbose_name="职能", blank=True, default=None)
+    url = models.TextField(verbose_name="工作地点")
     job_id = models.IntegerField(unique=True, verbose_name="工作id")  # 用来构造url
-    head_count = models.IntegerField(default=0, verbose_name="招聘人数")
+    # head_count = models.IntegerField(default=0, verbose_name="招聘人数")
     put_time = models.DateField(verbose_name="发布时间", blank=True, null=True, default=None)
     salary_low = models.IntegerField(
         verbose_name="工资_低", blank=True, null=True)
@@ -62,7 +63,7 @@ class Jobs(models.Model):
         default=0)
     education = models.ForeignKey(Education, blank=True,
                                   null=True, verbose_name="学历")
-    work_addr = models.CharField(max_length=255, verbose_name="工作地点")
+    # work_addr = models.CharField(max_length=255, verbose_name="工作地点")
     jobReqAndRes = models.CharField(max_length=255, verbose_name="岗位要求和职责")
     jobfare = models.CharField(max_length=255, verbose_name="工作福利")
     isUndercarriage = models.BooleanField(default=False, verbose_name="是否关闭")
