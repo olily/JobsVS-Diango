@@ -11,7 +11,8 @@ from .serializers import UserCollectJobSerializer, UserFocusCompanySerializer
 
 
 class UserCollectJobViewSet(mixins.ListModelMixin,
-                            mixins.UpdateModelMixin,
+                            mixins.CreateModelMixin,
+                            mixins.DestroyModelMixin,
                             viewsets.GenericViewSet):
     queryset = UserCollectJob.objects.all()
     serializer_class = UserCollectJobSerializer
@@ -24,7 +25,8 @@ class UserCollectJobViewSet(mixins.ListModelMixin,
 
 
 class UserFocusCompanyViewSet(mixins.ListModelMixin,
-                              mixins.UpdateModelMixin,
+                              mixins.CreateModelMixin,
+                              mixins.DestroyModelMixin,
                               viewsets.GenericViewSet):
     queryset = UserFocusCompany.objects.all()
     serializer_class = UserFocusCompanySerializer
