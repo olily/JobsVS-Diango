@@ -25,15 +25,9 @@ cursor_urllist = db_urllist.cursor()
 #
 
 # 转换学历
-
-
 def processEducation():
-    sscursor_jobsvs.execute('select id,name from education')
-    while True:
-        db_urllist.ping(reconnect=True)
-        data = sscursor_jobsvs.fetchone()
-        if not data:
-            break
+    cursor_jobsvs.execute('select id,name from education')
+    for data in cursor_jobsvs.fetchall():
         sql = 'update jobs_get_copy6 set education_id = %d where education = "%s"' % (
             data[0], data[1])
         # print(sql)
@@ -110,7 +104,6 @@ def processSlary():
             # print(sql, ";")
             db_urllist.commit()
 
-
 #  职能分解
 def splitFunction():
     cursor_urllist.execute('truncate table jobs_jobfunction')
@@ -153,4 +146,4 @@ def construct():
 # processSlary()
 # construct()
 # splitFunction()
-processJobfunction()
+# processJobfunction()

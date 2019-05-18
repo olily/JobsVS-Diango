@@ -6,7 +6,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import Industries, CompanyQuality, CompanySize, Companies
 from .filters import IndustriesFilter, CompanyQualityFilter, CompanySizeFilter, CompaniesFilter
 from .serializers import IndustriesSerializer, CompanyQualitySerializer, CompanySizeSerializer, CompaniesSerializer
-
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
 # Create your views here.
 
 
@@ -58,6 +58,7 @@ class CompaniesPagination(PageNumberPagination):
 
 class CompaniesViewSet(mixins.ListModelMixin,
                        mixins.UpdateModelMixin,
+                       CacheResponseMixin,
                        viewsets.GenericViewSet):
     queryset = Companies.objects.all()
     serializer_class = CompaniesSerializer
