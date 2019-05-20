@@ -106,6 +106,7 @@ class Companies(models.Model):
     industries = models.ManyToManyField(
         Industries, blank=True, verbose_name="行业")
     city = models.ForeignKey(Cities, blank=True, null=True, verbose_name="城市")
+    yesterday_count = models.IntegerField(default=0, verbose_name="昨天新增数量")
 
     def __str__(self):
         return self.name
