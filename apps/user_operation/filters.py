@@ -4,9 +4,11 @@ from .models import UserCollectJob, UserFocusCompany
 
 
 class UserCollectJobFilter(rest_framework.FilterSet):
+    name = django_filters.CharFilter(lookup_expr="icontains")
+
     class Meta:
         model = UserCollectJob
-        fields = ['user', 'job']
+        fields = ['name', 'user', 'job']
 
 
 class UserFocusCompanyFilter(rest_framework.FilterSet):

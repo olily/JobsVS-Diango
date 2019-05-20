@@ -32,4 +32,4 @@ class CompaniesFilter(rest_framework.FilterSet):
 
     class Meta:
         model = Companies
-        fields = ['name']
+        fields = ['name', 'size', 'quality', 'city']
