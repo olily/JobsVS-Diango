@@ -46,6 +46,9 @@ class UserWantJobSerializer(serializers.ModelSerializer):
     industry_name = serializers.SerializerMethodField()
     jobfunction_name = serializers.SerializerMethodField()
     city_name = serializers.SerializerMethodField()
+    education_name = serializers.SerializerMethodField()
+    size_name = serializers.SerializerMethodField()
+    workyear_name = serializers.SerializerMethodField()
 
     def get_industry_parent(self, obj):
         return obj.want_industry.category.id
@@ -64,6 +67,15 @@ class UserWantJobSerializer(serializers.ModelSerializer):
 
     def get_city_name(self, obj):
         return obj.want_city.name
+
+    def get_education_name(self, obj):
+        return obj.want_education.name
+
+    def get_size_name(self, obj):
+        return obj.want_companysize.name
+
+    def get_workyear_name(self, obj):
+        return obj.want_workyear.name
 
     class Meta:
         model = UserWantJob

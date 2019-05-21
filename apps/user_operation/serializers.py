@@ -50,6 +50,7 @@ class UserFocusCompanySerializer(serializers.ModelSerializer):
     city_name = serializers.SerializerMethodField()
     size_name = serializers.SerializerMethodField()
     quality_name = serializers.SerializerMethodField()
+    yesterday_count = serializers.SerializerMethodField()
 
     def get_company_name(self, obj):
         return obj.company.name
@@ -62,6 +63,9 @@ class UserFocusCompanySerializer(serializers.ModelSerializer):
 
     def get_quality_name(self, obj):
         return obj.company.quality.name
+
+    def get_yesterday_count(self, obj):
+        return obj.company.yesterday_count
 
     class Meta:
         model = UserFocusCompany

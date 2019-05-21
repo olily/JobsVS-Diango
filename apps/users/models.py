@@ -48,7 +48,7 @@ class UserProfile(models.Model):
     avatar = models.ImageField(
         blank=True,
         upload_to='avatars/',
-        default='avatars/default.jpg', verbose_name="头像")
+        default='avatars/default.png', verbose_name="头像")
     work_year = models.IntegerField(
         default=0,
         null=True,
@@ -59,7 +59,11 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         verbose_name="学校")
-    education = models.ForeignKey(Education, null=True, blank=True,verbose_name="学历")
+    education = models.ForeignKey(
+        Education,
+        null=True,
+        blank=True,
+        verbose_name="学历")
     sex = models.IntegerField(default=0, verbose_name="性别")  # 0保密 1男 2女
     birthday = models.DateField(null=True, blank=True, verbose_name="生日")
     city = models.ForeignKey(
