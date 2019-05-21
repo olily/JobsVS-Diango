@@ -32,9 +32,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'users.User'
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,15 +45,19 @@ INSTALLED_APPS = [
     'apps.education.apps.EducationConfig',
     'apps.job.apps.JobConfig',
     'apps.user_operation.apps.UserOperationConfig',
+    'apps.analyse.apps.AnalyseConfig',
     'xadmin',
     'crispy_forms',
     'django_filters',
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'django_cleanup'
+    'django_cleanup',
 
 ]
+
+# Application definition
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
