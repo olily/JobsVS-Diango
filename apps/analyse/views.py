@@ -40,15 +40,15 @@ class FareCloudPagination(PageNumberPagination):
 class FareCloudViewSet(mixins.ListModelMixin,
                        mixins.UpdateModelMixin,
                        viewsets.GenericViewSet):
-    queryset = JobPoint.objects.all()
-    serializer_class = JobsPointSerializer
+    queryset = FareCloud.objects.all()
+    serializer_class = FareCloudSerializer
     pagination_class = FareCloudPagination
     filter_backends = (
         DjangoFilterBackend,
         filters.SearchFilter,
         filters.OrderingFilter
     )
-    filter_class = JobsPointFilter
+    filter_class = FareCloudFilter
 
 
 class PointsPagination(PageNumberPagination):
