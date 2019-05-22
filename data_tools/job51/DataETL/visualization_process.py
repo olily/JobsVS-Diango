@@ -73,17 +73,20 @@ def constructPoint():
     cursor_urllist.execute('select * from point_process')
     list = cursor_urllist.fetchall()
     for item in list:
-        sql = 'insert into pointprocess(jobfunction_id,education_id,work_year,job_count,job_salary_low,job_salary_high) values(%d,%d,%d,%d,%d,%d)' % (
-            item[0],item[1],item[2],item[3],item[4],item[5])
+        sql = 'insert into jobspoints(jobfunction_id,education_id,work_year,salary_avg) values(%d,%d,%.4f,%d)' % (
+            item[0],item[1],item[2],item[3])
         # print(sql,";")
         fp2.write(sql + ';\n')
         fp2.flush()
 
 
-# fp = open("../data/insertjobpoint.sql","w+")
-# fp2 = open("../data/insertjobpoint.sql","w+")
-# constructPoint()
-# fp2.close()
 
-process_point()
+# process_point()
+
+# fp = open("../data/insertjobpoint.sql","w+")
+fp2 = open("../data/insertjobpoint.sql","w+")
+constructPoint()
+fp2.close()
+
+
 

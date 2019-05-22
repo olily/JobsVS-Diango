@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import JobMap
+from .models import JobMap, JobPoint
 
 
 class JobsMapSerializer(serializers.ModelSerializer):
@@ -18,15 +18,6 @@ class JobsMapSerializer(serializers.ModelSerializer):
 
 
 class JobsPointSerializer(serializers.ModelSerializer):
-    jobfunction_name = serializers.SerializerMethodField()
-    education_name = serializers.SerializerMethodField()
-
-    def get_jobfunction_name(self, obj):
-        return obj.jobfunction.name
-
-    def get_education_name(self, obj):
-        return obj.education.name
-
     class Meta:
-        model = JobMap
+        model = JobPoint
         fields = "__all__"
