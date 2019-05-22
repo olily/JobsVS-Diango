@@ -10,12 +10,19 @@ from .serializers import JobsMapSerializer, JobsPointSerializer
 
 # Create your views here.
 
+class MapsPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 100000
+
 
 class JobsMapViewSet(mixins.ListModelMixin,
                      mixins.UpdateModelMixin,
                      viewsets.GenericViewSet):
     queryset = JobMap.objects.all()
     serializer_class = JobsMapSerializer
+    pagination_class = MapsPagination
     filter_backends = (
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -23,7 +30,7 @@ class JobsMapViewSet(mixins.ListModelMixin,
     )
     filter_class = JobsMapFilter
 
-class CompaniesPagination(PageNumberPagination):
+class PointsPagination(PageNumberPagination):
     page_size = 5
     page_size_query_param = 'page_size'
     page_query_param = "page"
@@ -35,7 +42,7 @@ class JobsPointViewSet(mixins.ListModelMixin,
                        viewsets.GenericViewSet):
     queryset = JobPoint.objects.all()
     serializer_class = JobsPointSerializer
-    pagination_class = CompaniesPagination
+    pagination_class = PointsPagination
     filter_backends = (
         DjangoFilterBackend,
         filters.SearchFilter,
