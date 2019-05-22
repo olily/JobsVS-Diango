@@ -32,7 +32,7 @@ db_urllist = pymysql.connect("localhost", "root", "123456", "urllist", charset='
 cursor_urllist = db_urllist.cursor()
 # 清空数据表
 cursor_urllist.execute('SET foreign_key_checks = 0')
-cursor_urllist.execute('truncate table jobs_get')
+cursor_urllist.execute('truncate table jobs_get_copy12')
 cursor_urllist.execute('SET foreign_key_checks = 1')
 db_urllist.commit()
 
@@ -42,6 +42,17 @@ db_jobsvs = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='ut
 cursor_jobsvs = db_jobsvs.cursor()
 
 salary_dict = {'元/天':0,'千/月':2,'万/月':3,'万/年':4}
+
+# 使用execute方法执行SQL语句
+cursor_jobsvs.execute("SELECT id,co_id FROM companies")
+
+# 使用 fetchone() 方法获取一条数据
+data = cursor_jobsvs.fetchall()
+companyDict = {}
+for company in data:
+    companyDict[company[1]] = company[0]
+
+
 
 
 
@@ -152,7 +163,7 @@ def turn_page_thread(summission):
         # print(jobs_list)
 
         company_code=salary_type=put_time=city=None
-        salary_low = salary_high=0
+        salary_low = salary_high=company_id=0
 
         for items in jobs_list:
             job_basic_div = items.find(attrs={'class': 't1'})
@@ -174,6 +185,10 @@ def turn_page_thread(summission):
                 else:
                     company_code = job_num_str[0][:-5]
                 # print(company_code)
+            if company_code not in companyDict.keys():
+                continue
+
+            company_id = companyDict[company_code]
 
             city_span = items.find(attrs={'class': 't3'})
             if city_span is not None:
@@ -205,7 +220,7 @@ def turn_page_thread(summission):
                 put_time = put_time_span.text
                 # print(put_time)
             # 岗位名，岗位编码，企业编码，薪资（类型）,薪资（低），薪资（高），城市id
-            row = [job_name,job_code,company_code,salary_type,salary_low,salary_high,city,put_time,job_url]
+            row = [job_name,job_code,company_id,salary_type,salary_low,salary_high,city,put_time,job_url]
             # print(row)
 
             # mylock.acquire()
@@ -223,7 +238,7 @@ def insertDB(sql_value):
     global save_num
     db_urllist.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into jobs_get(name,code,company_code,salary_type,salary_low,salary_high,city,put_time,url,company_id,city_id,education_id) values("%s", "%s","%s","%s", %d,%d,"%s","%s","%s",0,1,1)' % (sql_value[0], str(sql_value[1]), str(sql_value[2]),str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
+    sql = 'insert into jobs_get_copy12(name,code,company_id,salary_type,salary_low,salary_high,city,put_time,url,city_id,education_id) values("%s", "%s",%d,"%s", %.2f,%.2f,"%s","%s","%s",1,1)' % (sql_value[0], str(sql_value[1]), sql_value[2],str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
     # print(sql)
     # SQL 插入语句
     try:

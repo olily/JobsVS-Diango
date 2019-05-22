@@ -11,8 +11,7 @@ db1 = pymysql.connect("localhost", "root", "123456", "jobsvs",)
 cursor1 = db1.cursor()
 
 sql1 = 'select id,name from cities'
-cursor1.execute(sql1)
-
+cursor1.execute('select id,name from cities')
 cityandidDict = {}
 cityandid = cursor1.fetchall()
 for item in cityandid:

@@ -129,6 +129,9 @@ def get_job_detail(items):
     study_tag = job_html.find(attrs={'class': 's_x'})
     if study_tag is not None:
         study = study_tag.text
+    education_id = 1
+    if study in educationDict.keys():
+        education_id = educationDict[study]
 
     # 岗位福利
     workfare = ""
@@ -166,7 +169,7 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'update jobs_get set status_jd=1,work_year="%s",education="%s",jobfare="%s",jd="%s" where code="%s"' % (str(sql_value[0]),str(sql_value[1]),str(sql_value[2]),str(sql_value[3]),str(sql_value[4]))
+    sql = 'update jobs_get set status_jd=1,work_year="%s",education_id=%d,jobfare="%s",jd="%s" where code="%s"' % (str(sql_value[0]),sql_value[1],str(sql_value[2]),str(sql_value[3]),str(sql_value[4]))
     # print(sql)
     fp.write(sql + ';\n')
     fp.flush()
@@ -214,6 +217,11 @@ db = pymysql.connect("localhost", "root", "123456", "urllist", charset='utf8')
 cursor = db.cursor()
 
 db.commit()
+
+educationDict = {}
+cityandid = cursor.fetchall()
+for item in cityandid:
+    educationDict[item[1]]=item[0]
 
 f = open("updatejd_sql.sql", "w+", encoding="utf-8")
 f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '\n')
