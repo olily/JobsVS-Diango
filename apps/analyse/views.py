@@ -4,9 +4,9 @@ from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import JobMap, JobPoint
-from .filters import JobsMapFilter, JobsPointFilter
-from .serializers import JobsMapSerializer, JobsPointSerializer
+from .models import JobMap, JobPoint,FareCloud
+from .filters import JobsMapFilter, JobsPointFilter,FareCloudFilter
+from .serializers import JobsMapSerializer, JobsPointSerializer,FareCloudSerializer
 
 # Create your views here.
 
@@ -29,6 +29,27 @@ class JobsMapViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = JobsMapFilter
+
+class FareCloudPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 100000
+
+
+class FareCloudViewSet(mixins.ListModelMixin,
+                       mixins.UpdateModelMixin,
+                       viewsets.GenericViewSet):
+    queryset = JobPoint.objects.all()
+    serializer_class = JobsPointSerializer
+    pagination_class = FareCloudPagination
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_class = JobsPointFilter
+
 
 class PointsPagination(PageNumberPagination):
     page_size = 5

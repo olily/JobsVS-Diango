@@ -47,3 +47,14 @@ class IndustryPie(models.Model):
         verbose_name = "岗位分析-饼图"
         verbose_name_plural = verbose_name
         db_table = "jobspie"
+
+
+class FareCloud(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    jobfare = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="福利")
+    count = models.IntegerField(default=0, verbose_name="数量")
+
+    class Meta:
+        verbose_name = "岗位分析-词云"
+        verbose_name_plural = verbose_name
+        db_table = "jobsfarecloud"
