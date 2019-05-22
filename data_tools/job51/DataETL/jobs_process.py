@@ -137,6 +137,20 @@ def processJobfunction():
         cursor_urllist.execute(sql)
     db_urllist.commit()
 
+
+#  职能分解
+def splitFare():
+    cursor_urllist.execute('truncate table jobs_fare')
+    cursor_urllist.execute('select id,jobfare from jobs_get_copy9_copy2')
+    for items in cursor_urllist.fetchall():
+        if items[1] !="" and items[1] is not None:
+            item = items[1].split('_')
+            for fun in item:
+                sql = 'insert into jobs_fare values(%d,"%s")'%(items[0],fun)
+                # print(sql)
+                cursor_urllist.execute(sql)
+            db_urllist.commit()
+
 # 转换sql
 def construct():
     cursor_urllist.execute('select * from jobs_get')
@@ -152,10 +166,11 @@ def construct():
 
 
 # 执行函数
-processEducation()
-processCity()
+# processEducation()
+# processCity()
 # processCompany()
 # processSalary()
 # construct()
 # splitFunction()
 # processJobfunction()
+splitFare()

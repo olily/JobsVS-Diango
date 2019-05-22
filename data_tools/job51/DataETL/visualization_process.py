@@ -37,10 +37,10 @@ def insert_Point():
 def process_point():
     sql = 'select id,work_year from point_process'
     cursor_urllist.execute(sql)
-    for item in cursor_jobsvs.fetchall():
-        process_point(item)
+    for item in cursor_urllist.fetchall():
+        # print(item)
         work_year = item[1]
-        if work_year ==0:
+        if work_year <=0:
             work_year = random.uniform(0,1)
         elif work_year  >0 and work_year <3:
             work_year = random.uniform(1,3)
@@ -52,9 +52,11 @@ def process_point():
             work_year = random.uniform(8, 10)
         else:
             work_year = random.uniform(10, 13)
-        sql2 = 'update point_prosss set work_year = %.3f where id=%d'%(item[0],work_year)
+        # print(work_year)
+        sql2 = 'update point_process set work_year = %.4f where id=%d'%(work_year,item[0])
         cursor_urllist.execute(sql2)
     db_urllist.commit()
+
 
 # 转换sql
 def constructMap():
@@ -79,9 +81,9 @@ def constructPoint():
 
 
 # fp = open("../data/insertjobpoint.sql","w+")
-fp2 = open("../data/insertjobpoint.sql","w+")
-constructPoint()
-fp2.close()
+# fp2 = open("../data/insertjobpoint.sql","w+")
+# constructPoint()
+# fp2.close()
 
-# process_point()
+process_point()
 

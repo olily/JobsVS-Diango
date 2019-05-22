@@ -22,11 +22,15 @@ class JobMap(models.Model):
 
 class JobPoint(models.Model):
     jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
+
+    # 颜色分类
     education = models.ForeignKey(Education, verbose_name="学历")
+
+    # 正态分布生成随机数作为横坐标
     work_year = models.FloatField(default=0, verbose_name="经验")
-    salary_low = models.IntegerField(default=0, verbose_name="薪资低")
-    salary_high = models.IntegerField(default=0, verbose_name="薪资高")
-    count = models.IntegerField(default=0, verbose_name="数量")
+
+    # 作为纵坐标
+    salary_avg = models.IntegerField(default=0, verbose_name="平均薪资")
 
     class Meta:
         verbose_name = "岗位分析-散点图"
