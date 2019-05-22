@@ -28,7 +28,18 @@ cursor_urllist = db_urllist.cursor()
 def processEducation():
     cursor_jobsvs.execute('select id,name from education')
     for data in cursor_jobsvs.fetchall():
-        sql = 'update jobs_get_copy9 set education_id = %d where education = "%s"' % (
+        sql = 'update jobs_get set education_id = %d where education = "%s"' % (
+            data[0], data[1])
+        # print(sql)
+        cursor_urllist.execute(sql)
+    db_urllist.commit()
+
+
+#
+def processCity():
+    cursor_jobsvs.execute('select id,name from cities')
+    for data in cursor_jobsvs.fetchall():
+        sql = 'update jobs_get set city_id = %d where city = "%s"' % (
             data[0], data[1])
         # print(sql)
         cursor_urllist.execute(sql)
@@ -51,6 +62,7 @@ def processCompany():
 
         # print('update companies set status_update = 1 where id = %d' % (data[0]))
         cursor_jobsvs.execute('update companies set status_update = 1 where id = %d' % (data[0]))
+        print(data[0])
         # print('update companies set status_update = 1 where id = %d' % (data[0]))
         db_jobsvs.commit()
     cursor_jobsvs.close()
@@ -59,7 +71,7 @@ def processCompany():
 #  转换工资
 def processSalary():
     cursor_urllist.execute(
-        'select code,salary_low,salary_high,salary_type from jobs_get_copy9 where status_update=1')
+        'select code,salary_low,salary_high,salary_type from jobs_get where status_update=1')
     list = cursor_urllist.fetchall()
     for data in list:
         if data is None:
@@ -67,7 +79,7 @@ def processSalary():
         if data[3] == '0':
             salary_low = data[1] * 22
             salary_high = data[2] * 22
-            sql = 'update jobs_get_copy9 set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
+            sql = 'update jobs_get set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
                 salary_low, salary_high, data[0])
             cursor_urllist.execute(sql)
             # print(sql, ";")
@@ -75,7 +87,7 @@ def processSalary():
         elif data[3] == '2':
             salary_low = data[1] * 1000
             salary_high = data[2] * 1000
-            sql = 'update jobs_get_copy9 set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
+            sql = 'update jobs_get set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
                 salary_low, salary_high, data[0])
             cursor_urllist.execute(sql)
             # print(sql, ";")
@@ -83,7 +95,7 @@ def processSalary():
         elif data[3] == '3':
             salary_low = data[1] * 10000
             salary_high = data[2] * 10000
-            sql = 'update jobs_get_copy9 set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
+            sql = 'update jobs_get set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
                 salary_low, salary_high, data[0])
             cursor_urllist.execute(sql)
             # print(sql, ";")
@@ -91,13 +103,13 @@ def processSalary():
         elif data[3] == '4':
             salary_low = data[1] * 10000 / 12
             salary_high = data[2] * 10000 / 12
-            sql = 'update jobs_get_copy9 set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
+            sql = 'update jobs_get set salary_low=%d,salary_high=%d,status_update=0 where code = "%s"' % (
                 salary_low, salary_high, data[0])
             cursor_urllist.execute(sql)
             # print(sql, ";")
             db_urllist.commit()
         else:
-            sql = 'update jobs_get_copy9 set salary_low=0,salary_high =0,status_update=0 where code = "%s"' % (
+            sql = 'update jobs_get set salary_low=0,salary_high =0,status_update=0 where code = "%s"' % (
                 data[0])
             cursor_urllist.execute(sql)
             # print(sql, ";")
@@ -106,7 +118,7 @@ def processSalary():
 #  职能分解
 def splitFunction():
     cursor_urllist.execute('truncate table jobs_jobfunction')
-    cursor_urllist.execute('select id,job_fun from jobs_get_copy9')
+    cursor_urllist.execute('select id,job_fun from jobs_get')
     for items in cursor_urllist.fetchall():
         if items[1] !="" and items[1] is not None:
             item = items[1].split('_')
@@ -127,7 +139,7 @@ def processJobfunction():
 
 # 转换sql
 def construct():
-    cursor_urllist.execute('select * from jobs_get_copy9')
+    cursor_urllist.execute('select * from jobs_get')
     list = cursor_urllist.fetchall()
     for item in list:
         str = "2019-"+item[7]
@@ -140,8 +152,9 @@ def construct():
 
 
 # 执行函数
-# processEducation()
-processCompany()
+processEducation()
+processCity()
+# processCompany()
 # processSalary()
 # construct()
 # splitFunction()

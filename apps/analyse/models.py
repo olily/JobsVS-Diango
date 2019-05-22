@@ -8,7 +8,7 @@ from apps.job.models import JobFunctions
 
 
 class JobMap(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions, verbose_name="行业")
+    jobfunction = models.ForeignKey(JobFunctions, verbose_name="职能")
     city = models.ForeignKey(Cities, verbose_name="城市")
     job_count = models.IntegerField(default=0, verbose_name="岗位数量")
     job_salary_low = models.IntegerField(default=0, verbose_name="薪资低")
@@ -21,6 +21,7 @@ class JobMap(models.Model):
 
 
 class JobPoint(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
     education = models.ForeignKey(Education, verbose_name="学历")
     work_year = models.FloatField(default=0, verbose_name="经验")
     salary_low = models.IntegerField(default=0, verbose_name="薪资低")
@@ -34,6 +35,7 @@ class JobPoint(models.Model):
 
 
 class IndustryPie(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
     industry = models.ForeignKey(Industries, verbose_name="行业")
     count = models.IntegerField(default=0, verbose_name="数量")
 
