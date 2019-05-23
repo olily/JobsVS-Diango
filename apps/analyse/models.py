@@ -1,7 +1,7 @@
 from django.db import models
 from apps.city.models import Cities,Provinces
 from apps.education.models import Education
-from apps.company.models import Industries,CompanyQuality,CompanySize
+from apps.company.models import Industries,CompanyQuality,CompanySize,Companies
 from apps.job.models import JobFunctions
 
 # Create your models here.
@@ -22,13 +22,10 @@ class JobMap(models.Model):
 
 class JobPoint(models.Model):
     jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
-
     # 颜色分类
     education = models.ForeignKey(Education, verbose_name="学历")
-
     # 正态分布生成随机数作为横坐标
     work_year = models.FloatField(default=0, verbose_name="经验")
-
     # 作为纵坐标
     salary_avg = models.IntegerField(default=0, verbose_name="平均薪资")
 
@@ -36,6 +33,19 @@ class JobPoint(models.Model):
         verbose_name = "岗位分析-散点图"
         verbose_name_plural = verbose_name
         db_table = "jobspoints"
+
+class Jobbar(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
+    company = models.ForeignKey(CompanySize,verbose_name="企业")
+    count = models.IntegerField(default=0, verbose_name="数量")
+    salary_low = models.IntegerField(default=0, verbose_name="薪资_低")
+    salary_high = models.IntegerField(default=0, verbose_name="薪资_高")
+
+
+    class Meta:
+        verbose_name = "岗位分析-柱状图"
+        verbose_name_plural = verbose_name
+        db_table = "jobsbar"
 
 
 class IndustryPie(models.Model):
