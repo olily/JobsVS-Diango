@@ -21,7 +21,12 @@ class JobMap(models.Model):
 
 
 class JobPoint(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
     # 颜色分类
     education = models.ForeignKey(Education, verbose_name="学历")
     # 正态分布生成随机数作为横坐标
@@ -36,8 +41,13 @@ class JobPoint(models.Model):
 
 
 class Jobbar(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
-    company = models.ForeignKey(CompanySize,verbose_name="企业")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
+    company = models.ForeignKey(CompanySize, verbose_name="企业")
     count = models.IntegerField(default=0, verbose_name="数量")
     salary_low = models.IntegerField(default=0, verbose_name="薪资_低")
     salary_high = models.IntegerField(default=0, verbose_name="薪资_高")
@@ -50,7 +60,12 @@ class Jobbar(models.Model):
 
 
 class IndustryPie(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
     industry = models.ForeignKey(Industries, verbose_name="行业")
     count = models.IntegerField(default=0, verbose_name="数量")
 
@@ -61,8 +76,18 @@ class IndustryPie(models.Model):
 
 
 class FareCloud(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
-    jobfare = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="福利")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
+    jobfare = models.CharField(
+        default=None,
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name="福利")
     count = models.IntegerField(default=0, verbose_name="数量")
 
     class Meta:
@@ -72,8 +97,18 @@ class FareCloud(models.Model):
 
 
 class ResponseCloud(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
-    response = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="职责")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
+    response = models.CharField(
+        default=None,
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name="职责")
     count = models.IntegerField(default=0, verbose_name="数量")
 
     class Meta:
@@ -83,15 +118,24 @@ class ResponseCloud(models.Model):
 
 
 class RequestCloud(models.Model):
-    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
-    request = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="要求")
+    jobfunction = models.ForeignKey(
+        JobFunctions,
+        default=None,
+        null=True,
+        blank=True,
+        verbose_name="职能")
+    request = models.CharField(
+        default=None,
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name="要求")
     count = models.IntegerField(default=0, verbose_name="数量")
 
     class Meta:
         verbose_name = "岗位分析-要求词云"
         verbose_name_plural = verbose_name
         db_table = "requestcloud"
-
 
 
 class CompanyMap(models.Model):
@@ -116,11 +160,11 @@ class CompanyHot(models.Model):
 
 
 class CompanyParallel(models.Model):
-    province = models.ForeignKey(Provinces, verbose_name="省份")
-    city = models.ForeignKey(Cities, verbose_name="城市")
-    size = models.ForeignKey(CompanySize, verbose_name="性质")
-    quality = models.ForeignKey(CompanyQuality, verbose_name="性质")
-    industries = models.ForeignKey(Industries, verbose_name="行业")
+    p = models.ForeignKey(Provinces, verbose_name="省份", default=None)
+    c = models.ForeignKey(Cities, verbose_name="城市", default=None)
+    s = models.ForeignKey(CompanySize, verbose_name="规模", default=None)
+    q = models.ForeignKey(CompanyQuality, verbose_name="性质", default=None)
+    i = models.ForeignKey(Industries, verbose_name="行业", default=None)
 
 
     class Meta:
