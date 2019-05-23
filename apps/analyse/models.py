@@ -55,9 +55,29 @@ class FareCloud(models.Model):
     count = models.IntegerField(default=0, verbose_name="数量")
 
     class Meta:
-        verbose_name = "岗位分析-词云"
+        verbose_name = "岗位分析-福利词云"
         verbose_name_plural = verbose_name
         db_table = "jobsfarecloud"
+
+class ResponseCloud(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    response = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="职责")
+    count = models.IntegerField(default=0, verbose_name="数量")
+
+    class Meta:
+        verbose_name = "岗位分析-职责词云"
+        verbose_name_plural = verbose_name
+        db_table = "responsecloud"
+
+class RequestCloud(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    request = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="要求")
+    count = models.IntegerField(default=0, verbose_name="数量")
+
+    class Meta:
+        verbose_name = "岗位分析-要求词云"
+        verbose_name_plural = verbose_name
+        db_table = "requestcloud"
 
 
 
