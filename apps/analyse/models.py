@@ -1,7 +1,7 @@
 from django.db import models
 from apps.city.models import Cities
 from apps.education.models import Education
-from apps.company.models import Industries
+from apps.company.models import Industries,CompanyQuality
 from apps.job.models import JobFunctions
 
 # Create your models here.
@@ -58,3 +58,24 @@ class FareCloud(models.Model):
         verbose_name = "岗位分析-词云"
         verbose_name_plural = verbose_name
         db_table = "jobsfarecloud"
+
+
+
+class CompanyMap(models.Model):
+    city = models.ForeignKey(Cities, verbose_name="城市")
+    count = models.IntegerField(default=0, verbose_name="企业数量")
+
+    class Meta:
+        verbose_name = "企业分析-地图"
+        verbose_name_plural = verbose_name
+        db_table = "companysmap"
+
+class CompanyHot(models.Model):
+    industries = models.ForeignKey(Industries, verbose_name="行业")
+    quality = models.ForeignKey(CompanyQuality, verbose_name="性质")
+    count = models.IntegerField(default=0, verbose_name="企业数量")
+
+    class Meta:
+        verbose_name = "企业分析-热力图"
+        verbose_name_plural = verbose_name
+        db_table = "companyshot"
