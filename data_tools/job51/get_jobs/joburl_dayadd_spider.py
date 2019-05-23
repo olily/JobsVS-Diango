@@ -32,7 +32,7 @@ db_urllist = pymysql.connect("localhost", "root", "123456", "urllist", charset='
 cursor_urllist = db_urllist.cursor()
 # 清空数据表
 cursor_urllist.execute('SET foreign_key_checks = 0')
-cursor_urllist.execute('truncate table jobs_get_copy11')
+cursor_urllist.execute('truncate table jobs_get_copy14')
 cursor_urllist.execute('SET foreign_key_checks = 1')
 db_urllist.commit()
 
@@ -244,7 +244,7 @@ def insertDB(sql_value):
     global save_num
     db_urllist.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into jobs_get_copy11(name,code,company_id,salary_type,salary_low,salary_high,city_id,put_time,url,education_id) values("%s", "%s",%d,"%s", %.2f,%.2f,%d,"%s","%s",1)' % (sql_value[0], str(sql_value[1]), sql_value[2],str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
+    sql = 'insert into jobs_get_copy14(name,code,company_id,salary_type,salary_low,salary_high,city_id,put_time,url,education_id) values("%s", "%s",%d,"%s", %.2f,%.2f,%d,"%s","%s",1)' % (sql_value[0], str(sql_value[1]), sql_value[2],str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
     # print(sql)
     # SQL 插入语句
     try:

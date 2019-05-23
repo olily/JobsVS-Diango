@@ -4,11 +4,11 @@ from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import JobMap, JobPoint, FareCloud, CompanyHot, CompanyMap, CompanyParallel
+from .models import JobMap, JobPoint, FareCloud, CompanyHot, CompanyMap, CompanyParallel, Jobbar
 from .filters import JobsMapFilter, JobsPointFilter, FareCloudFilter, CompanyHotFilter, CompanyMapFilter, \
-    CompanyParallelFilter
+    CompanyParallelFilter, JobbarFilter
 from .serializers import JobsMapSerializer, JobsPointSerializer, FareCloudSerializer, CompanyHotSerializer, \
-    CompanyMapSerializer, CompanyParallelSerializer
+    CompanyMapSerializer, CompanyParallelSerializer, JobbarSerializer
 
 # Create your views here.
 
@@ -122,7 +122,7 @@ class CompanyParallelPagination(PageNumberPagination):
     page_size = 5
     page_size_query_param = 'page_size'
     page_query_param = "page"
-    max_page_size = 1000000
+    max_page_size = 10000
 
 
 class CompanyParallelViewSet(mixins.ListModelMixin,
@@ -137,3 +137,24 @@ class CompanyParallelViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = CompanyParallelFilter
+
+
+class JobbarPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 10000
+
+
+class JobbarViewSet(mixins.ListModelMixin,
+                    mixins.UpdateModelMixin,
+                    viewsets.GenericViewSet):
+    queryset = Jobbar.objects.all().order_by('-count')
+    serializer_class = JobbarSerializer
+    pagination_class = JobbarPagination
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_class = JobbarFilter

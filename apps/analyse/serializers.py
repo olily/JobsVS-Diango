@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import JobMap, JobPoint, FareCloud, CompanyMap, CompanyHot, CompanyParallel
+from .models import JobMap, JobPoint, FareCloud, CompanyMap, \
+    CompanyHot, CompanyParallel, Jobbar
 
 
 class JobsMapSerializer(serializers.ModelSerializer):
@@ -43,6 +44,12 @@ class CompanyMapSerializer(serializers.ModelSerializer):
 class CompanyHotSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompanyHot
+        fields = "__all__"
+
+
+class JobbarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Jobbar
         fields = "__all__"
 
 

@@ -1,6 +1,7 @@
 from django_filters import rest_framework
 import django_filters
-from .models import JobMap, JobPoint, FareCloud, CompanyMap, CompanyHot, CompanyParallel
+from .models import JobMap, JobPoint, FareCloud, CompanyMap, \
+    CompanyHot, CompanyParallel, Jobbar
 
 
 class JobsMapFilter(rest_framework.FilterSet):
@@ -36,4 +37,10 @@ class CompanyHotFilter(rest_framework.FilterSet):
 class CompanyParallelFilter(rest_framework.FilterSet):
     class Meta:
         model = CompanyParallel
+        fields = []
+
+
+class JobbarFilter(rest_framework.FilterSet):
+    class Meta:
+        model = Jobbar
         fields = []

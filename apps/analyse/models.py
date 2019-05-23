@@ -47,7 +47,7 @@ class Jobbar(models.Model):
         null=True,
         blank=True,
         verbose_name="职能")
-    company = models.ForeignKey(CompanySize, verbose_name="企业")
+    company = models.ForeignKey(Companies, verbose_name="企业")
     count = models.IntegerField(default=0, verbose_name="数量")
     salary_low = models.IntegerField(default=0, verbose_name="薪资_低")
     salary_high = models.IntegerField(default=0, verbose_name="薪资_高")

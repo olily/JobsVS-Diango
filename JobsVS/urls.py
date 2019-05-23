@@ -27,7 +27,7 @@ from apps.city.views import CitiesViewSet, ProvincesViewSet
 from apps.job.views import JobsViewSet, JobFunctionsViewSet
 from apps.user_operation.views import UserCollectJobViewSet, UserFocusCompanyViewSet
 from apps.analyse.views import JobsMapViewSet, JobsPointViewSet, FareCloudViewSet, \
-    CompanyMapViewSet, CompanyHotViewSet, CompanyParallelViewSet
+    CompanyMapViewSet, CompanyHotViewSet, CompanyParallelViewSet,JobbarViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet, base_name="users")
 router.register(r'register', UserRegViewSet, base_name="register")
@@ -107,6 +107,10 @@ router.register(
     r'companyparalle',
     CompanyParallelViewSet,
     base_name="companyparalle")
+router.register(
+    r'jobbar',
+    JobbarViewSet,
+    base_name="jobbar")
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),
