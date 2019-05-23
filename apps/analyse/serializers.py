@@ -30,6 +30,11 @@ class FareCloudSerializer(serializers.ModelSerializer):
 
 
 class CompanyMapSerializer(serializers.ModelSerializer):
+    city_name = serializers.SerializerMethodField()
+
+    def get_city_name(self, obj):
+        return obj.city.name
+
     class Meta:
         model = CompanyMap
         fields = "__all__"
