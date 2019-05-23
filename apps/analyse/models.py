@@ -1,7 +1,7 @@
 from django.db import models
-from apps.city.models import Cities
+from apps.city.models import Cities,Provinces
 from apps.education.models import Education
-from apps.company.models import Industries,CompanyQuality
+from apps.company.models import Industries,CompanyQuality,CompanySize
 from apps.job.models import JobFunctions
 
 # Create your models here.
@@ -55,9 +55,29 @@ class FareCloud(models.Model):
     count = models.IntegerField(default=0, verbose_name="数量")
 
     class Meta:
-        verbose_name = "岗位分析-词云"
+        verbose_name = "岗位分析-福利词云"
         verbose_name_plural = verbose_name
         db_table = "jobsfarecloud"
+
+class ResponseCloud(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    response = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="职责")
+    count = models.IntegerField(default=0, verbose_name="数量")
+
+    class Meta:
+        verbose_name = "岗位分析-职责词云"
+        verbose_name_plural = verbose_name
+        db_table = "responsecloud"
+
+class RequestCloud(models.Model):
+    jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
+    request = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="要求")
+    count = models.IntegerField(default=0, verbose_name="数量")
+
+    class Meta:
+        verbose_name = "岗位分析-要求词云"
+        verbose_name_plural = verbose_name
+        db_table = "requestcloud"
 
 
 
@@ -79,3 +99,17 @@ class CompanyHot(models.Model):
         verbose_name = "企业分析-热力图"
         verbose_name_plural = verbose_name
         db_table = "companyshot"
+
+
+class CompanyParallel(models.Model):
+    province = models.ForeignKey(Provinces, verbose_name="省份")
+    city = models.ForeignKey(Cities, verbose_name="城市")
+    size = models.ForeignKey(CompanySize, verbose_name="性质")
+    quality = models.ForeignKey(CompanyQuality, verbose_name="性质")
+    industries = models.ForeignKey(Industries, verbose_name="行业")
+
+
+    class Meta:
+        verbose_name = "企业分析-平行坐标"
+        verbose_name_plural = verbose_name
+        db_table = "companysparallel"
