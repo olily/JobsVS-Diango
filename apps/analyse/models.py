@@ -34,6 +34,7 @@ class JobPoint(models.Model):
         verbose_name_plural = verbose_name
         db_table = "jobspoints"
 
+
 class Jobbar(models.Model):
     jobfunction = models.ForeignKey(JobFunctions, default=None, null=True,blank=True,verbose_name="职能")
     company = models.ForeignKey(CompanySize,verbose_name="企业")
@@ -69,6 +70,7 @@ class FareCloud(models.Model):
         verbose_name_plural = verbose_name
         db_table = "jobsfarecloud"
 
+
 class ResponseCloud(models.Model):
     jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
     response = models.CharField(default=None, max_length=255,null=True,blank=True, verbose_name="职责")
@@ -78,6 +80,7 @@ class ResponseCloud(models.Model):
         verbose_name = "岗位分析-职责词云"
         verbose_name_plural = verbose_name
         db_table = "responsecloud"
+
 
 class RequestCloud(models.Model):
     jobfunction = models.ForeignKey(JobFunctions,default=None, null=True,blank=True,verbose_name="职能")
@@ -99,6 +102,7 @@ class CompanyMap(models.Model):
         verbose_name = "企业分析-地图"
         verbose_name_plural = verbose_name
         db_table = "companysmap"
+
 
 class CompanyHot(models.Model):
     industries = models.ForeignKey(Industries, verbose_name="行业")
@@ -123,3 +127,52 @@ class CompanyParallel(models.Model):
         verbose_name = "企业分析-平行坐标"
         verbose_name_plural = verbose_name
         db_table = "companysparallel"
+
+
+class CompanyRange(models.Model):
+    company = models.ForeignKey(Companies,verbose_name="企业")
+    count = models.IntegerField(default=0, verbose_name="数量")
+    salary_avg = models.IntegerField(default=0, verbose_name="平均薪资")
+
+
+    class Meta:
+        verbose_name = "总体分析-企业分析"
+        verbose_name_plural = verbose_name
+        db_table = "companysrange"
+
+
+class IndustrySunburst(models.Model):
+    Industries = models.ForeignKey(Industries, verbose_name="行业")
+    count = models.IntegerField(default=0, verbose_name="数量")
+    salary_avg = models.IntegerField(default=0, verbose_name="平均薪资")
+
+
+    class Meta:
+        verbose_name = "总体分析-行业分析"
+        verbose_name_plural = verbose_name
+        db_table = "industrysunburst"
+
+
+class CitySunburst(models.Model):
+    province = models.ForeignKey(Provinces, verbose_name="省份")
+    city = models.ForeignKey(Cities, verbose_name="城市")
+    count = models.IntegerField(default=0, verbose_name="数量")
+    salary_avg= models.IntegerField(default=0, verbose_name="平均薪资")
+
+
+    class Meta:
+        verbose_name = "总体分析-城市分析"
+        verbose_name_plural = verbose_name
+        db_table = "citysunburst"
+
+
+class FunSunburst(models.Model):
+    functions = models.ForeignKey(JobFunctions, verbose_name="职能")
+    count = models.IntegerField(default=0, verbose_name="数量")
+    salary_avg = models.IntegerField(default=0, verbose_name="平均薪资")
+
+
+    class Meta:
+        verbose_name = "总体分析-职能分析"
+        verbose_name_plural = verbose_name
+        db_table = "funsunburst"

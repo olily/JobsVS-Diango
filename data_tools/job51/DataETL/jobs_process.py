@@ -13,15 +13,11 @@ db_jobsvs = pymysql.connect(
     charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor_jobsvs = db_jobsvs.cursor()
-# sscursor_jobsvs = pymysql.cursors.SSCursor(db_jobsvs)
-# sscursor_jobsvs.execute('SET NET_WRITE_TIMEOUT = 5000000')
 
 # 打开数据库连接
 db_urllist = pymysql.connect("localhost", "root", "123456", "urllist",)
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor_urllist = db_urllist.cursor()
-# sscursor_urllist = pymysql.cursors.SSCursor(db_urllist)
-# sscursor_urllist.execute('SET  session NET_WRITE_TIMEOUT = 5000000')
 #
 
 # 转换学历
@@ -164,6 +160,23 @@ def construct():
             item[0],item[1],item[2],item[3],item[4],item[5],item[6],put_time,item[8],item[9],item[10],item[11],item[12],item[13])
         print(sql,";")
 
+# 转换sql
+def constructJobs():
+    cursor_jobsvs.execute('SET foreign_key_checks = 0')
+    cursor_jobsvs.execute('truncate table jobs')
+    cursor_jobsvs.execute('SET foreign_key_checks = 0')
+    cursor_urllist.execute('select * from jobs_get_copy9_copy4')
+    list = cursor_urllist.fetchall()
+    for item in list:
+        # print(list)
+        str = "2019-"+item[7]
+        # print(str)
+        put_time = datetime.datetime.strptime(str, "%Y-%m-%d").date()  # 字符串转化为date形式
+        # print(put_time)
+        sql = 'insert into jobs(name,job_id,company_id,salary_low,salary_high,city_id,put_time,url,work_year,education_id) values("%s","%s",%d,%.2f,%.2f,%d,"%s","%s","%s",%d)' % (
+            item[1],item[2],item[3],item[4],item[5],item[6],put_time,item[8],item[9],item[10])
+        fp2.write(sql+';')
+        fp2.flush()
 
 # 执行函数
 # processEducation()
@@ -173,4 +186,10 @@ def construct():
 # construct()
 # splitFunction()
 # processJobfunction()
-splitFare()
+# splitFare()
+
+fp2 = open("../data/insertjobs.sql","w+",encoding='utf-8')
+constructJobs()
+fp2.close()
+#
+
