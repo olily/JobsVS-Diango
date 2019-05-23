@@ -26,7 +26,7 @@ from apps.company.views import CompaniesViewSet, CompanySizeViewSet, CompanyQual
 from apps.city.views import CitiesViewSet, ProvincesViewSet
 from apps.job.views import JobsViewSet, JobFunctionsViewSet
 from apps.user_operation.views import UserCollectJobViewSet, UserFocusCompanyViewSet
-from apps.analyse.views import JobsMapViewSet,JobsPointViewSet,FareCloudViewSet
+from apps.analyse.views import JobsMapViewSet, JobsPointViewSet, FareCloudViewSet, CompanyMapViewSet, CompanyHotViewSet
 router = DefaultRouter()
 router.register(r'users', UserViewSet, base_name="users")
 router.register(r'register', UserRegViewSet, base_name="register")
@@ -94,6 +94,14 @@ router.register(
     r'farecloud',
     FareCloudViewSet,
     base_name="farecloud")
+router.register(
+    r'companyhot',
+    CompanyHotViewSet,
+    base_name="companyhot")
+router.register(
+    r'companymap',
+    CompanyMapViewSet,
+    base_name="companymap")
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),

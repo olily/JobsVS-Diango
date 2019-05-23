@@ -4,11 +4,12 @@ from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import JobMap, JobPoint,FareCloud
-from .filters import JobsMapFilter, JobsPointFilter,FareCloudFilter
-from .serializers import JobsMapSerializer, JobsPointSerializer,FareCloudSerializer
+from .models import JobMap, JobPoint, FareCloud, CompanyHot, CompanyMap
+from .filters import JobsMapFilter, JobsPointFilter, FareCloudFilter, CompanyHotFilter, CompanyMapFilter
+from .serializers import JobsMapSerializer, JobsPointSerializer, FareCloudSerializer, CompanyHotSerializer, CompanyMapSerializer
 
 # Create your views here.
+
 
 class MapsPagination(PageNumberPagination):
     page_size = 5
@@ -29,6 +30,7 @@ class JobsMapViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = JobsMapFilter
+
 
 class FareCloudPagination(PageNumberPagination):
     page_size = 5
@@ -70,3 +72,45 @@ class JobsPointViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = JobsPointFilter
+
+
+class CompanyHotPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 100000
+
+
+class CompanyHotViewSet(mixins.ListModelMixin,
+                        mixins.UpdateModelMixin,
+                        viewsets.GenericViewSet):
+    queryset = CompanyHot.objects.all()
+    serializer_class = CompanyHotSerializer
+    pagination_class = PointsPagination
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_class = CompanyHotFilter
+
+
+class CompanyMapPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 100000
+
+
+class CompanyMapViewSet(mixins.ListModelMixin,
+                        mixins.UpdateModelMixin,
+                        viewsets.GenericViewSet):
+    queryset = CompanyMap.objects.all()
+    serializer_class = CompanyMapSerializer
+    pagination_class = CompanyMapPagination
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_class = CompanyMapFilter
