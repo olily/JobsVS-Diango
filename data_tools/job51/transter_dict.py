@@ -10,7 +10,7 @@ db1 = pymysql.connect("localhost", "root", "123456", "jobsvs",)
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor1 = db1.cursor()
 
-sql1 = 'select id,name from cities'
+# sql1 = 'select id,name from cities'
 cursor1.execute('select id,name from cities')
 cityandidDict = {}
 cityandid = cursor1.fetchall()
@@ -18,9 +18,7 @@ for item in cityandid:
     cityandidDict[item[1]]=item[0]
 print(cityandidDict)
 
-sql2 = 'select id,name from industries'
-cursor1.execute(sql2)
-
+cursor1.execute('select id,name from industries')
 industryandidDict = {}
 cityandid = cursor1.fetchall()
 for item in cityandid:
@@ -45,17 +43,16 @@ for item in cityandid:
     companysizeDict[item[1]]=item[0]
 # print(companysizeDict)
 
-sql3 = 'select id,name from education'
-cursor1.execute(sql3)
 
+cursor1.execute('select id,name from education')
 educationDict = {}
 cityandid = cursor1.fetchall()
 for item in cityandid:
     educationDict[item[1]]=item[0]
 # print(educationDict)
 
-sql1 = 'select id,name from jobfunction'
-cursor1.execute(sql1)
+# sql1 = 'select id,name from jobfunction'
+cursor1.execute('select id,name from jobfunction')
 
 jonfuncationDict = {}
 cityandid = cursor1.fetchall()

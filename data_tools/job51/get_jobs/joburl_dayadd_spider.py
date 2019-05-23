@@ -32,7 +32,7 @@ db_urllist = pymysql.connect("localhost", "root", "123456", "urllist", charset='
 cursor_urllist = db_urllist.cursor()
 # 清空数据表
 cursor_urllist.execute('SET foreign_key_checks = 0')
-cursor_urllist.execute('truncate table jobs_get_copy12')
+cursor_urllist.execute('truncate table jobs_get_copy11')
 cursor_urllist.execute('SET foreign_key_checks = 1')
 db_urllist.commit()
 
@@ -52,8 +52,11 @@ companyDict = {}
 for company in data:
     companyDict[company[1]] = company[0]
 
-
-
+cursor_jobsvs.execute('select id,name from cities')
+cityandidDict = {}
+cityandid = cursor_jobsvs.fetchall()
+for item in cityandid:
+    cityandidDict[item[1]]=item[0]
 
 
 # 测试速度用
@@ -145,7 +148,7 @@ def turn_page_thread(summission):
 
     j=0
     # 翻页遍历所有岗位
-    while (True):
+    while (j<=2000):
         j+=1
         city_page_url = url_pre+city_code+url_middle+str(j)+url_tail
         # print(city_page_url)
@@ -194,6 +197,9 @@ def turn_page_thread(summission):
             if city_span is not None:
                 city_text = city_span.text.split('-')
                 city = city_text[0]
+            city_id=1
+            if city in cityandidDict.keys():
+                city_id = cityandidDict[city]
 
             salary_span = items.find(attrs={'class': 't4'})
             # print(salary_span)
@@ -220,7 +226,7 @@ def turn_page_thread(summission):
                 put_time = put_time_span.text
                 # print(put_time)
             # 岗位名，岗位编码，企业编码，薪资（类型）,薪资（低），薪资（高），城市id
-            row = [job_name,job_code,company_id,salary_type,salary_low,salary_high,city,put_time,job_url]
+            row = [job_name,job_code,company_id,salary_type,salary_low,salary_high,city_id,put_time,job_url]
             # print(row)
 
             # mylock.acquire()
@@ -238,7 +244,7 @@ def insertDB(sql_value):
     global save_num
     db_urllist.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'insert into jobs_get_copy12(name,code,company_id,salary_type,salary_low,salary_high,city,put_time,url,city_id,education_id) values("%s", "%s",%d,"%s", %.2f,%.2f,"%s","%s","%s",1,1)' % (sql_value[0], str(sql_value[1]), sql_value[2],str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
+    sql = 'insert into jobs_get_copy11(name,code,company_id,salary_type,salary_low,salary_high,city_id,put_time,url,education_id) values("%s", "%s",%d,"%s", %.2f,%.2f,%d,"%s","%s",1)' % (sql_value[0], str(sql_value[1]), sql_value[2],str(sql_value[3]),float(sql_value[4]),float(sql_value[5]),sql_value[6],str(sql_value[7]),str(sql_value[8]))
     # print(sql)
     # SQL 插入语句
     try:

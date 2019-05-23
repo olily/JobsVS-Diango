@@ -85,7 +85,7 @@ def cursor_query():
     query_num = 0
     # 首先查询全量数据
     sscursor = pymysql.cursors.SSCursor(db)
-    sscursor.execute('select code,url from jobs_get where status_jd=0')
+    sscursor.execute('select code,url from jobs_get_copy12 where status_jd=0')
     while True:
         # 每次获取时会从上次游标的位置开始移动size个位置，返回size条数据
         data = sscursor.fetchone()
@@ -151,7 +151,7 @@ def get_job_detail(items):
         if jd_tag.article is not None:
             jd = jd_tag.article.text
 
-    job_info = [work_year,study,workfare,jd,code]
+    job_info = [work_year,education_id,workfare,jd,code]
     # print(job_info)
 
     mylock.acquire()
@@ -169,10 +169,10 @@ def insertDB(sql_value):
     global save_num
     db.ping(reconnect=True)
     # 提交到数据库执行,每1000条提交一次
-    sql = 'update jobs_get set status_jd=1,work_year="%s",education_id=%d,jobfare="%s",jd="%s" where code="%s"' % (str(sql_value[0]),sql_value[1],str(sql_value[2]),str(sql_value[3]),str(sql_value[4]))
+    sql = 'update jobs_get_copy12 set status_jd=1,work_year="%s",education_id=%d,jobfare="%s",jd="%s" where code="%s"' % (str(sql_value[0]),sql_value[1],str(sql_value[2]),str(sql_value[3]),str(sql_value[4]))
     # print(sql)
-    fp.write(sql + ';\n')
-    fp.flush()
+    # fp.write(sql + ';\n')
+    # fp.flush()
     # exit()
     # SQL 插入语句
     try:
@@ -215,11 +215,15 @@ print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 db = pymysql.connect("localhost", "root", "123456", "urllist", charset='utf8')
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
-
 db.commit()
 
+# 打开数据库连接
+db_jobsvs = pymysql.connect("localhost", "root", "123456", "jobsvs", charset='utf8')
+# 使用 cursor() 方法创建一个游标对象 cursor
+cursor_jobsvs = db_jobsvs.cursor()
+cursor_jobsvs.execute('select id,name from education')
 educationDict = {}
-cityandid = cursor.fetchall()
+cityandid = cursor_jobsvs.fetchall()
 for item in cityandid:
     educationDict[item[1]]=item[0]
 
