@@ -4,9 +4,11 @@ from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import JobMap, JobPoint, FareCloud, CompanyHot, CompanyMap
-from .filters import JobsMapFilter, JobsPointFilter, FareCloudFilter, CompanyHotFilter, CompanyMapFilter
-from .serializers import JobsMapSerializer, JobsPointSerializer, FareCloudSerializer, CompanyHotSerializer, CompanyMapSerializer
+from .models import JobMap, JobPoint, FareCloud, CompanyHot, CompanyMap, CompanyParallel
+from .filters import JobsMapFilter, JobsPointFilter, FareCloudFilter, CompanyHotFilter, CompanyMapFilter, \
+    CompanyParallelFilter
+from .serializers import JobsMapSerializer, JobsPointSerializer, FareCloudSerializer, CompanyHotSerializer, \
+    CompanyMapSerializer, CompanyParallelSerializer
 
 # Create your views here.
 
@@ -114,3 +116,24 @@ class CompanyMapViewSet(mixins.ListModelMixin,
         filters.OrderingFilter
     )
     filter_class = CompanyMapFilter
+
+
+class CompanyParallelPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    page_query_param = "page"
+    max_page_size = 1000000
+
+
+class CompanyParallelViewSet(mixins.ListModelMixin,
+                             mixins.UpdateModelMixin,
+                             viewsets.GenericViewSet):
+    queryset = CompanyParallel.objects.all()
+    serializer_class = CompanyParallelSerializer
+    pagination_class = CompanyParallelPagination
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    )
+    filter_class = CompanyParallelFilter
