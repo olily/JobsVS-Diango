@@ -5,9 +5,11 @@ __author__ = 'olily'
 import pymysql
 import jieba
 
+start = 68
+
 
 def construct_dict():
-    for i in range(68, 1020):
+    for i in range(start, 1020):
         res[str(i)] = {}
         req[str(i)] = {}
 
@@ -27,8 +29,8 @@ def process_data(fun_id, text_res, text_req):
         ' ',
         '》',
         '《',
-        '，',
-        '要求',
+        '，','of','条件','参与','in','the','能力','to','com','专业','完成',
+        '要求','or','and'
         '岗位',
         '应该',
         '职责',
@@ -47,21 +49,23 @@ def process_data(fun_id, text_res, text_req):
         '优先',
         '具有',
         '经验',
-        '学历',
+        '学历','以上学历'
         '使用',
         '负责',
         '精通',
         '自由',
         '能够',
         '一定',
-        '可能',r'\r\n','常用','根据','以及','一种','岗位职责','毕业','其他','部门',}
+        '可能',r'\r\n','常用','根据','以及','一种','岗位职责','毕业','其他','部门','以上学历','be','00'}
     # jieba.add_word('大数据')
     words_res = list(jieba.cut(text_res))
     words_req = list(jieba.cut(text_req))
     resDict = {}
     reqDict = {}
-    resSet = set(words_res) - dele
-    reqSet = set(words_req) - dele
+    dele_req = {'30','51','10'}
+    dele_res = {'责任心','毕业生','5000','7.5','1.3','for','组织协调','985','211','重点本科'}
+    resSet = set(words_res) - dele - dele_res
+    reqSet = set(words_req) - dele - dele_req
     for w in resSet:
         if len(w) > 2:
             resDict[w] = words_res.count(w)
@@ -77,7 +81,7 @@ def process_data(fun_id, text_res, text_req):
             continue
         sql1 = 'insert into responsecloud(jobfunction_id,response,count) values (%d,"%s",%d)' % (
             fun_id, i[0], i[1])
-        print(sql1)
+        # print(sql1)
         cursor_jobsvs.execute(sql1)
     db_jobsvs.commit()
         # res[str(fun_id)][i[0]]=i[1]
@@ -90,7 +94,7 @@ def process_data(fun_id, text_res, text_req):
     db_jobsvs.commit()
 
 def get_data():
-    for i in range(68, 1020):
+    for i in range(start, 1020):
         sql = 'select req,res from fun_jd_copy1 where jobsfunction_id=%d' % (i)
         cursor_urllist.execute(sql)
         reqstr = ""
@@ -102,7 +106,7 @@ def get_data():
 
 
 def insertDB():
-    for i in range(68,1020):
+    for i in range(start,1020):
         for item in res[str(i)]:
             sql1 = 'insert into responsecloud(jobfunction_id,response,count) values (%d,"%s",%d)'%(i,res[str(i)][item[0]],res[str(i)][item[1]])
             # print(sql1)
