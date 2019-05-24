@@ -7,7 +7,7 @@ import jieba
 
 
 def construct_dict():
-    for i in range(69, 1020):
+    for i in range(68, 1020):
         res[str(i)] = {}
         req[str(i)] = {}
 
