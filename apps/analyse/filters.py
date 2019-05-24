@@ -1,7 +1,7 @@
 from django_filters import rest_framework
 import django_filters
 from .models import JobMap, JobPoint, FareCloud, CompanyMap, \
-    CompanyHot, CompanyParallel, Jobbar
+    CompanyHot, CompanyParallel, Jobbar,ResponseCloud,RequestCloud,CitySunburst,FunSunburst,IndustrySunburst
 
 
 class JobsMapFilter(rest_framework.FilterSet):
@@ -19,6 +19,18 @@ class JobsPointFilter(rest_framework.FilterSet):
 class FareCloudFilter(rest_framework.FilterSet):
     class Meta:
         model = FareCloud
+        fields = ["jobfunction"]
+
+
+class ReqCloudFilter(rest_framework.FilterSet):
+    class Meta:
+        model = RequestCloud
+        fields = ["jobfunction"]
+
+
+class ResCloudFilter(rest_framework.FilterSet):
+    class Meta:
+        model = ResponseCloud
         fields = ["jobfunction"]
 
 
@@ -44,3 +56,24 @@ class JobbarFilter(rest_framework.FilterSet):
     class Meta:
         model = Jobbar
         fields = []
+
+
+class CitysunFilter(rest_framework.FilterSet):
+    class Meta:
+        model = CitySunburst
+        fields = []
+
+
+
+class FunsunFilter(rest_framework.FilterSet):
+    class Meta:
+        model = FunSunburst
+        fields = []
+
+
+
+class IndustrysunFilter(rest_framework.FilterSet):
+    class Meta:
+        model = IndustrySunburst
+        fields = []
+
