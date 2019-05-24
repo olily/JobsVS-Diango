@@ -48,6 +48,11 @@ class CompanyHotSerializer(serializers.ModelSerializer):
 
 
 class JobbarSerializer(serializers.ModelSerializer):
+    company_name = serializers.SerializerMethodField()
+
+    def get_company_name(self, obj):
+        return obj.company.name
+    
     class Meta:
         model = Jobbar
         fields = "__all__"
