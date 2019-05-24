@@ -7,12 +7,13 @@ import jieba
 
 
 def construct_dict():
-    for i in range(68, 1020):
+    for i in range(69, 1020):
         res[str(i)] = {}
         req[str(i)] = {}
 
 
 def process_data(fun_id, text_res, text_req):
+    print(fun_id)
     # article = open('test.txt', 'r').read()
     dele = {
         '。',
@@ -53,7 +54,7 @@ def process_data(fun_id, text_res, text_req):
         '自由',
         '能够',
         '一定',
-        '可能',r'\r\n','常用','根据','以及','一种','岗位职责','毕业','其他','部门'}
+        '可能',r'\r\n','常用','根据','以及','一种','岗位职责','毕业','其他','部门',}
     # jieba.add_word('大数据')
     words_res = list(jieba.cut(text_res))
     words_req = list(jieba.cut(text_req))
@@ -72,11 +73,21 @@ def process_data(fun_id, text_res, text_req):
     reqlist = sorted(reqDict.items(), key=lambda x: x[1], reverse=True)
 
     for i in reslist:
-        res[str(fun_id)][i[0]]=i[1]
-
+        if i[1]<3:
+            continue
+        sql1 = 'insert into responsecloud(jobfunction_id,response,count) values (%d,"%s",%d)' % (
+            fun_id, i[0], i[1])
+        print(sql1)
+        cursor_jobsvs.execute(sql1)
+    db_jobsvs.commit()
+        # res[str(fun_id)][i[0]]=i[1]
     for i in reqlist:
-        req[str(fun_id)][i[0]] = i[1]
-
+        if i[1]<10:
+            continue
+        sql2 = 'insert into requestcloud(jobfunction_id,request,count) values (%d,"%s",%d)' % (
+            fun_id, i[0], i[1])
+        cursor_jobsvs.execute(sql2)
+    db_jobsvs.commit()
 
 def get_data():
     for i in range(68, 1020):
@@ -89,16 +100,19 @@ def get_data():
             resstr += items[1]
         process_data(i, resstr, reqstr)
 
+
 def insertDB():
     for i in range(68,1020):
         for item in res[str(i)]:
-            sql1 = 'insert into responsecloud values (%d,"%s",%d)'%(i,res[str(i)][item[0]],res[str(i)][item[1]])
-            cursor_urllist.execute(sql1)
-        db_urllist.commit()
+            sql1 = 'insert into responsecloud(jobfunction_id,response,count) values (%d,"%s",%d)'%(i,res[str(i)][item[0]],res[str(i)][item[1]])
+            # print(sql1)
+            cursor_jobsvs.execute(sql1)
+        db_jobsvs.commit()
         for item in req[str(i)]:
-            sql2 = 'insert into requestcloud values (%d,"%s",%d)' % (i, req[str(i)][item[0]], req[str(i)][item[1]])
-            cursor_urllist.execute(sql2)
-        db_urllist.commit()
+            sql2 = 'insert into requestcloud(jobfunction_id,request,count) values (%d,"%s",%d)' % (i, req[str(i)][item[0]], req[str(i)][item[1]])
+            # print(sql2)
+            cursor_jobsvs.execute(sql2)
+        db_jobsvs.commit()
 
 
 # 打开数据库连接
@@ -126,5 +140,5 @@ req = {}
 
 construct_dict()
 get_data()
-insertDB()
+# insertDB()
 
