@@ -72,6 +72,12 @@ class UserProfile(models.Model):
         blank=True,
         default=None,
         verbose_name="现居城市")
+    mobilenum = models.CharField(
+        max_length=12,
+        null=True,
+        blank=True,
+        default = None,
+        verbose_name="手机号")
 
     class Meta:
         verbose_name = "个人信息"

@@ -5,7 +5,7 @@ __author__ = 'olily'
 import pymysql
 import jieba
 
-start = 68
+start = 198
 
 
 def construct_dict():
@@ -50,19 +50,19 @@ def process_data(fun_id, text_res, text_req):
         '具有',
         '经验',
         '学历','以上学历'
-        '使用',
+        '使用','独立'
         '负责',
         '精通',
         '自由',
         '能够',
         '一定',
-        '可能',r'\r\n','常用','根据','以及','一种','岗位职责','毕业','其他','部门','以上学历','be','00'}
+        '可能',r'\r\n','常用','根据','2.1','以及','一种','岗位职责','毕业','其他','部门','以上学历','be','00','  '}
     # jieba.add_word('大数据')
     words_res = list(jieba.cut(text_res))
     words_req = list(jieba.cut(text_req))
     resDict = {}
     reqDict = {}
-    dele_req = {'30','51','10'}
+    dele_req = {'30','51','10','大学本科'}
     dele_res = {'责任心','毕业生','5000','7.5','1.3','for','组织协调','985','211','重点本科'}
     resSet = set(words_res) - dele - dele_res
     reqSet = set(words_req) - dele - dele_req
@@ -70,14 +70,14 @@ def process_data(fun_id, text_res, text_req):
         if len(w) > 2:
             resDict[w] = words_res.count(w)
     for w in reqSet:
-        if len(w) > 1:
+        if len(w) > 2:
             reqDict[w] = words_req.count(w)
 
     reslist = sorted(resDict.items(), key=lambda x: x[1], reverse=True)
     reqlist = sorted(reqDict.items(), key=lambda x: x[1], reverse=True)
 
     for i in reslist:
-        if i[1]<3:
+        if i[1]<6:
             continue
         sql1 = 'insert into responsecloud(jobfunction_id,response,count) values (%d,"%s",%d)' % (
             fun_id, i[0], i[1])
@@ -86,7 +86,7 @@ def process_data(fun_id, text_res, text_req):
     db_jobsvs.commit()
         # res[str(fun_id)][i[0]]=i[1]
     for i in reqlist:
-        if i[1]<10:
+        if i[1]<6:
             continue
         sql2 = 'insert into requestcloud(jobfunction_id,request,count) values (%d,"%s",%d)' % (
             fun_id, i[0], i[1])
