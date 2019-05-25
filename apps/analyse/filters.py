@@ -55,7 +55,7 @@ class CompanyParallelFilter(rest_framework.FilterSet):
 class JobbarFilter(rest_framework.FilterSet):
     class Meta:
         model = Jobbar
-        fields = []
+        fields = ["jobfunction"]
 
 
 class CitysunFilter(rest_framework.FilterSet):

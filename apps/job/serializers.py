@@ -7,6 +7,7 @@ class JobsSerializer(serializers.ModelSerializer):
     city_name = serializers.SerializerMethodField()
     edu_name = serializers.SerializerMethodField()
     companysize_name = serializers.SerializerMethodField()
+    company_image = serializers.SerializerMethodField()
 
     def get_company_name(self, obj):
         return obj.company.name
@@ -19,6 +20,9 @@ class JobsSerializer(serializers.ModelSerializer):
 
     def get_companysize_name(self, obj):
         return obj.company.size.name
+
+    def get_company_image(self, obj):
+        return obj.company.img_url
 
     class Meta:
         model = Jobs

@@ -29,7 +29,8 @@ class CompanySizeFilter(rest_framework.FilterSet):
 
 class CompaniesFilter(rest_framework.FilterSet):
     name = django_filters.CharFilter(lookup_expr="icontains")
+    yesterday_count_min = django_filters.NumberFilter("yesterday_count", lookup_expr='gte')
 
     class Meta:
         model = Companies
-        fields = ['name', 'size', 'quality', 'city']
+        fields = ['name', 'size', 'quality', 'city','yesterday_count_min']
