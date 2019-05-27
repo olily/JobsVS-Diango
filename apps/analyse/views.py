@@ -172,7 +172,7 @@ class CompanyParallelPagination(PageNumberPagination):
 class CompanyParallelViewSet(mixins.ListModelMixin,
                              mixins.UpdateModelMixin,
                              viewsets.GenericViewSet):
-    queryset = CompanyParallel.objects.all()
+    queryset = CompanyParallel.objects.order_by('?')
     serializer_class = CompanyParallelSerializer
     pagination_class = CompanyParallelPagination
     filter_backends = (

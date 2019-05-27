@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Jobs, JobFunctions
+from apps.users.models import UserWantJob
 
 
 class JobsSerializer(serializers.ModelSerializer):
@@ -8,6 +9,7 @@ class JobsSerializer(serializers.ModelSerializer):
     edu_name = serializers.SerializerMethodField()
     companysize_name = serializers.SerializerMethodField()
     company_image = serializers.SerializerMethodField()
+    result = serializers.SerializerMethodField()
 
     def get_company_name(self, obj):
         return obj.company.name
@@ -23,6 +25,26 @@ class JobsSerializer(serializers.ModelSerializer):
 
     def get_company_image(self, obj):
         return obj.company.img_url
+
+    def get_result(self, obj):
+        print(self.context['request'].user)
+        userwant = UserWantJob.objects.get(user=self.context['request'].user)
+
+        #筛选字段
+        print("want_city", userwant.want_city_id)
+        print("want_salary_low", userwant.want_salary_low)
+        print("want_salary_high", userwant.want_salary_high)
+
+        #向量计算
+
+        print("want_education", userwant.want_education_id)
+        print("want_workyear", userwant.want_workyear_id)
+        print("want_city", userwant.want_city_id)
+        print("want_industry", userwant.want_industry_id)
+        print("want_jobfunction", userwant.want_jobfunction_id)
+
+        print("want_companysize", userwant.want_companysize_id)
+        return 0
 
     class Meta:
         model = Jobs
