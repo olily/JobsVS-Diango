@@ -55,15 +55,7 @@ class JobsSerializer(serializers.ModelSerializer):
         # print(self.context['request'].user)
         userwant = UserWantJob.objects.get(user=self.context['request'].user)
 
-        #筛选字段
-
-        # print("want_city", userwant.want_city_id)
-        # print("want_salary_low", userwant.want_salary_low)
-        # print("want_salary_high", userwant.want_salary_high)
-        # print("want_workyear", userwant.want_workyear_id)
-
         #向量计算
-
         user_education = userwant.want_education_id * 10/7
         user_industry_category = userwant.want_industry.category_id
         user_function_category = userwant.want_jobfunction.category_id
@@ -81,9 +73,9 @@ class JobsSerializer(serializers.ModelSerializer):
         education = obj.education_id * 10/7
         comsize = obj.company.size_id * 10/8
 
-        print(obj.company.id)
-        print(obj.company.industries)
-        print(obj.company.industries.all())
+        # print(obj.company.id)
+        # print(obj.company.industries)
+        # print(obj.company.industries.all())
         industries = obj.company.industries.all()
         if industries.count() > 0:
 
