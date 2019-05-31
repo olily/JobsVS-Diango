@@ -139,6 +139,6 @@ urlpatterns = [
     # jwt的认证接口
     url(r'^api/login/', obtain_jwt_token),
     url(r'^api/', include(router.urls)),
-    url(r'docs/', include_docs_urls(title="OnlineJudgeBE")),
+    url(r'docs/', include_docs_urls(title="JobsVS")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

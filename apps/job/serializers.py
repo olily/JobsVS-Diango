@@ -79,28 +79,34 @@ class JobsSerializer(serializers.ModelSerializer):
             #     print(industry)
             industry_f = industries[0]  # 取第一个
             industry_category = industry_f.category_id
-            industry = industry_category * 20 / 65 + (
-                industry_f.id - IndustriesDict[industry_category]['first']) / \
-                IndustriesDict[industry_category]['first']
+            if industry_category == 1:
+                industry = 0
+            else:
+                industry = industry_category * 20 / 65 + (
+                    industry_f.id - IndustriesDict[industry_category]['first']) / \
+                    IndustriesDict[industry_category]['first']
         jobfun = 0
 
         jobfunctions = obj.jobfunction.all()
         if jobfunctions.count() > 0:
             jobfunctions_f = jobfunctions[0]  # 取第一个
             function_category = jobfunctions_f.category_id
-            if function_category == 67:
+            if function_category == 67 or function_category == 66 or function_category is None:
                 jobfun = 0
             else:
-                jobfun = function_category * 20 / 11 + (
-                    jobfunctions_f.id - JobFunctionsDict[function_category]['first']) / \
-                    JobFunctionsDict[function_category]['count']
+                if function_category == 1:
+                    jobfun = 0
+                else:
+                    jobfun = function_category * 20 / 11 + (
+                        jobfunctions_f.id - JobFunctionsDict[function_category]['first']) / \
+                        JobFunctionsDict[function_category]['count']
 
         vector = [education, comsize, industry, jobfun]
 
         compare = [user_vector, vector]
 
         cosine = cosine_similarity(compare)
-        print(cosine[0][1])
+        # print(cosine[0][1])
 
         return cosine[0][1]
 

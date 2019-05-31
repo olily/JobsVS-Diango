@@ -6,6 +6,8 @@ from apps.user_operation.models import UserFocusCompany
 
 class JobsFilter(rest_framework.FilterSet):
     name = django_filters.CharFilter(lookup_expr="icontains")
+    salary_low_min = django_filters.NumberFilter("salary_low", lookup_expr='gte')
+    salary_high_max = django_filters.NumberFilter("salary_high", lookup_expr='lte')
     work_year_min = django_filters.NumberFilter("work_year", lookup_expr='gte')
     work_year_max = django_filters.NumberFilter("work_year", lookup_expr='lte')
     focuscompany_filter = django_filters.NumberFilter(
@@ -25,6 +27,8 @@ class JobsFilter(rest_framework.FilterSet):
             'name',
             'city',
             'education',
+            'salary_low_min',
+            'salary_high_max',
             'work_year_min',
             'work_year_max',
             'put_time'

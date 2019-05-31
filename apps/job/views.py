@@ -6,6 +6,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import Jobs, JobFunctions
 from .filters import JobsFilter, JobFunctionsFilter
 from .serializers import JobsSerializer, JobFunctionsSerializer
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
 
 
 # Create your views here.
@@ -17,8 +18,9 @@ class JobsPagination(PageNumberPagination):
     max_page_size = 100000
 class JobsViewSet(mixins.ListModelMixin,
                   mixins.UpdateModelMixin,
+                  CacheResponseMixin,
                   viewsets.GenericViewSet):
-    queryset = Jobs.objects.all()
+    queryset = Jobs.objects.order_by('?')
     serializer_class = JobsSerializer
     filter_backends = (
         DjangoFilterBackend,
