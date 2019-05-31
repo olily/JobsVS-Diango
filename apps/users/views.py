@@ -52,7 +52,7 @@ class CustomBackend(ModelBackend):
             # django的后台中密码加密：所以不能password==password
             # UserProfile继承的AbstractUser中有def check_password(self,
             # raw_password):
-            if user.password == password:
+            if user.password == password or user.check_password(password):
                 return user
         except Exception as e:
             return None

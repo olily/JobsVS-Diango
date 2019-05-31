@@ -32,7 +32,7 @@ class JobsSerializer(serializers.ModelSerializer):
     edu_name = serializers.SerializerMethodField()
     companysize_name = serializers.SerializerMethodField()
     company_image = serializers.SerializerMethodField()
-    result = serializers.SerializerMethodField()
+    # result = serializers.SerializerMethodField()
 
     def get_company_name(self, obj):
         return obj.company.name
@@ -48,20 +48,21 @@ class JobsSerializer(serializers.ModelSerializer):
 
     def get_company_image(self, obj):
         return obj.company.img_url
-
+    '''
     def get_result(self, obj):
-        userwant = UserWantJob.objects.get(user=self.context['request'].user)
+        # userwant = UserWantJob.objects.get(user=self.context['request'].user)
 
         # 向量计算
-        user_education = userwant.want_education_id * 10 / 7
-        user_industry_category = userwant.want_industry.category_id
-        user_function_category = userwant.want_jobfunction.category_id
-        user_industry = user_industry_category * 20 / 65 + \
-            (userwant.want_industry_id - IndustriesDict[user_industry_category]['first']) / IndustriesDict[user_industry_category]['first']
-        user_jobfun = user_function_category * 20 / 11 + \
-            (userwant.want_jobfunction_id - JobFunctionsDict[user_function_category]['first']) / JobFunctionsDict[user_function_category]['count']
-
-        user_comsize = userwant.want_companysize_id * 10 / 8
+        user_education = 7.14
+        # user_industry_category = 3
+        # user_function_category = 4
+        # user_industry = 3 * 20 / 65 + \
+        #     (14 - IndustriesDict[user_industry_category]['first']) / IndustriesDict[user_industry_category]['first']
+        # user_jobfun = user_function_category * 20 / 11 + \
+        #     (72 - JobFunctionsDict[4]['first']) / JobFunctionsDict[user_function_category]['count']
+        user_industry = 0.92
+        user_jobfun = 7.33
+        user_comsize = 6.25
         user_vector = [
             user_education,
             user_comsize,
@@ -109,7 +110,7 @@ class JobsSerializer(serializers.ModelSerializer):
         # print(cosine[0][1])
 
         return cosine[0][1]
-
+    '''
     class Meta:
         model = Jobs
         fields = "__all__"

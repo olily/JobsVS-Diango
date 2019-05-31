@@ -20,7 +20,8 @@ class JobsViewSet(mixins.ListModelMixin,
                   mixins.UpdateModelMixin,
                   CacheResponseMixin,
                   viewsets.GenericViewSet):
-    queryset = Jobs.objects.order_by('?')
+    # queryset = Jobs.objects.order_by('?')
+    queryset = Jobs.objects.all()
     serializer_class = JobsSerializer
     filter_backends = (
         DjangoFilterBackend,
@@ -34,7 +35,7 @@ class JobsViewSet(mixins.ListModelMixin,
 class JobFunctionsViewSet(mixins.ListModelMixin,
                           mixins.UpdateModelMixin,
                           viewsets.GenericViewSet):
-    queryset = JobFunctions.objects.all()
+    queryset = JobFunctions.objects.order_by('?')
     serializer_class = JobFunctionsSerializer
     filter_backends = (
         DjangoFilterBackend,
