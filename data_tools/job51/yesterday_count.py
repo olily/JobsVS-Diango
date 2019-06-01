@@ -9,9 +9,9 @@ for line in open("data/yesterday.txt"):
     data = line.split('\t')
     company_id = int(data[0])
     count = int(data[1][:-1])
-    print('UPDATE companies SET yesterday_count=%d WHERE id=%d' % (count,company_id))
+    # print('UPDATE companies SET yesterday_count=%d WHERE id=%d' % (count,company_id))
     cursor1.execute('UPDATE companies SET yesterday_count=%d WHERE id=%d' % (count,company_id))
-db1.commit()
+    db1.commit()
 exit()
 # 打开数据库连接
 

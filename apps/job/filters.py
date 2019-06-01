@@ -2,7 +2,8 @@ from django_filters import rest_framework
 import django_filters
 from .models import Jobs, JobFunctions
 from apps.user_operation.models import UserFocusCompany
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class JobsFilter(rest_framework.FilterSet):
     name = django_filters.CharFilter(lookup_expr="icontains")
@@ -17,8 +18,9 @@ class JobsFilter(rest_framework.FilterSet):
         if value == '':
             return queryset.all()
         elif value == 1:
+            user = User.objects.get(username="simona")
             companies = UserFocusCompany.objects.filter(
-                user=self.request.user).values('company')
+                user=user).values('company')
             return queryset.filter(company__in=companies)
 
     class Meta:
