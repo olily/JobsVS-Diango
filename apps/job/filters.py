@@ -31,7 +31,8 @@ class JobsFilter(rest_framework.FilterSet):
             'salary_high_max',
             'work_year_min',
             'work_year_max',
-            'put_time'
+            'put_time',
+            'jobfunction__category'
         ]
 
 
